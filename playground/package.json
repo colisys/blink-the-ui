@@ -1,0 +1,29 @@
+{
+  "name": "@blink-the-ui/playground",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.22",
+    "@blink-the-ui/components": "workspace:components",
+    "@blink-the-ui/animations": "workspace:animations",
+    "@blink-the-ui/directives": "workspace:directives",
+    "@blink-the-ui/i18n": "workspace:i18n",
+    "@blink-the-ui/overlays": "workspace:overlays"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "@vitejs/plugin-vue-jsx": "^5.1.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.9",
+    "vue-tsc": "^3.1.0",
+    "@types/less": "^3.0.8",
+    "less": "^4.4.2"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@blink-the-ui/i18n",
+  "version": "1.0.0",
+  "description": "i18n support for blink-the-ui",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blink-the-ui",
+    "vue3",
+    "i18n",
+    "internationalization"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "vue-i18n": "^9.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0",
+    "@vue/tsconfig": "^0.8.1",
+    "prettier": "^3.6.2",
+    "typescript": "~5.9.3",
+    "vue-tsc": "^3.1.0"
+  }
+}

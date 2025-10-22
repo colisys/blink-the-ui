@@ -1,0 +1,36 @@
+{
+  "name": "@blink-the-ui/animations",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "main": "src/index.ts",
+  "dependencies": {
+    "vue": "^3.5.22",
+    "@blink-the-ui/helper": "workspace:helper"
+  },
+  "keywords": [
+    "blink-the-ui",
+    "vue3",
+    "animations"
+  ],
+  "devDependencies": {
+    "@types/less": "^3.0.8",
+    "@types/node": "^24.6.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitejs/plugin-vue-jsx": "^5.1.1",
+    "@vue/babel-plugin-jsx": "^2.0.1",
+    "@vue/tsconfig": "^0.8.1",
+    "less": "^4.4.2",
+    "prettier": "^3.6.2",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.9",
+    "vue-tsc": "^3.1.0"
+  }
+}

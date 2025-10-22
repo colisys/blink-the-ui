@@ -1,0 +1,23 @@
+{
+  "datetime": {
+    "futureText": "{0}后",
+    "pastText": "{0}前",
+    "yesterdayText": "昨天",
+    "tomorrowText": "明天",
+    "week": "{0}周",
+    "weeks": "{0}周",
+    "years": "{0}年",
+    "year": "{0}年",
+    "month": "{0}月",
+    "months": "{0}月",
+    "day": "{0}天",
+    "days": "{0}天",
+    "hour": "{0}小时",
+    "hours": "{0}小时",
+    "minute": "{0}分钟",
+    "minutes": "{0}分钟",
+    "second": "{0}秒",
+    "seconds": "{0}秒",
+    "justNowText": "刚刚"
+  }
+}

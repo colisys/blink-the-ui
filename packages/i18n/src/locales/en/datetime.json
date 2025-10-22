@@ -1,0 +1,23 @@
+{
+  "datetime": {
+    "futureText": "{0} later",
+    "pastText": "{0} ago",
+    "yesterdayText": "Yesterday",
+    "tomorrowText": "Tomorrow",
+    "week": "{0} week",
+    "weeks": "{0} weeks",
+    "year": "{0} year",
+    "years": "{0} years",
+    "month": "{0} month",
+    "months": "{0} months",
+    "day": "{0} day",
+    "days": "{0} days",
+    "hour": "{0} hour",
+    "hours": "{0} hours",
+    "minute": "{0} minute",
+    "minutes": "{0} minutes",
+    "second": "{0} second",
+    "seconds": "{0} seconds",
+    "justNowText": "Just now"
+  }
+}

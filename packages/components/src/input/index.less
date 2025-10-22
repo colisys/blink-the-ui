@@ -1,0 +1,59 @@
+@import '../index.less';
+
+@input-class-name: ~'blink-input';
+
+.@{input-class-name}-wrapper {
+  border-bottom: 2px solid;
+  width: 200px;
+  border-color: var(--global-border-color);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &:has(input:focus) {
+    border-bottom: 2px solid var(--global-primary-color);
+  }
+}
+
+.@{input-class-name} {
+  padding: 6px 8px;
+  transition: all 0.3s;
+
+  input {
+    border: unset;
+    outline: unset;
+    font-size: 14px;
+    width: 100%;
+    background-color: transparent;
+
+    &:focus {
+      outline: unset;
+    }
+  }
+
+  &-toolbox {
+    position: relative;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+
+    & > span {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      // 统一对齐基线
+      vertical-align: middle;
+      // 统一字体族和尺寸
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "blink-the-ui",
+  "version": "1.0.0",
+  "description": "A simple vue3 component library",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm -C playground dev",
+    "build": "pnpm -C packages/components build",
+    "test": "pnpm -C packages/tests test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "docs:dev": "pnpm -C docs docs:dev",
+    "docs:build": "pnpm -C docs docs:build",
+    "docs:preview": "pnpm -C docs docs:preview"
+  },
+  "keywords": [
+    "blink-the-ui",
+    "vue3",
+    "component-library",
+    "vite",
+    "typescript"
+  ],
+  "author": "colisys <colisys@duck.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.22"
+  }
+}

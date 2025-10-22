@@ -1,0 +1,131 @@
+@import '../index.less';
+
+@overlay-class-name: ~'blink-overlay';
+@bgcolor: var(--global-light-color);
+@header-buttom-bgcolor: color-mix(
+  in srgb,
+  var(--global-light-color) 100%,
+  var(--global-dark-color) 2%
+);
+
+.@{overlay-class-name} {
+  &-wrapper {
+    &:not(&-moving):not(&-resizing) {
+      transition:
+        width 0.3s ease,
+        height 0.3s ease,
+        top 0.3s ease,
+        left 0.3s ease;
+    }
+
+    &-min {
+      .@{overlay-class-name}-header {
+        border-bottom: 1px solid var(--global-border-color);
+      }
+    }
+
+    position: absolute;
+    text-align: left;
+    top: 0;
+    left: 0;
+    display: block;
+    // 添加基础z-index
+    z-index: 1000;
+  }
+
+  &-container {
+    background-color: @bgcolor;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &-header {
+    background-color: @header-buttom-bgcolor;
+    border: 1px solid var(--global-border-color);
+    border-bottom: unset;
+    padding: 8px 12px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 40px;
+    }
+  }
+
+  &-body {
+    background-color: @bgcolor;
+    border: 1px solid var(--global-border-color);
+    padding: 8px 12px;
+    text-align: left;
+    height: 100%;
+  }
+
+  &-footer {
+    background-color: @header-buttom-bgcolor;
+    border: 1px solid var(--global-border-color);
+    padding: 4px 10px;
+    border-top: unset;
+    user-select: none;
+    position: relative;
+    height: auto;
+
+    &-resize-handler {
+      transition: width 0.3s ease, height 0.3s ease;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 12px;
+      height: 12px;
+      cursor: se-resize;
+      background: linear-gradient(
+        135deg,
+        transparent 0%,
+        transparent 50%,
+        var(--global-light-color) 50%,
+        var(--global-light-color) 60%,
+        rgba(0, 0, 0, 0.1) 60%,
+        rgba(0, 0, 0, 0.1) 70%,
+        rgba(0, 0, 0, 0.05) 70%,
+        rgba(0, 0, 0, 0.05) 80%,
+        transparent 80%,
+        transparent 100%
+      );
+
+      &-active {
+        width: 30px!important;
+        height: 30px!important;
+      }
+
+      &:hover {
+        width: 16px;
+        height: 16px;
+
+        background: linear-gradient(
+          135deg,
+          transparent 0%,
+          transparent 50%,
+          var(--global-primary-color) 50%,
+          var(--global-primary-color) 60%,
+          rgba(0, 123, 255, 0.3) 60%,
+          rgba(0, 123, 255, 0.3) 70%,
+          rgba(0, 123, 255, 0.15) 70%,
+          rgba(0, 123, 255, 0.15) 80%,
+          transparent 80%,
+          transparent 100%
+        );
+      }
+    }
+
+    &-buttons {
+      text-align: right;
+    }
+  }
+}

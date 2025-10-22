@@ -1,0 +1,30 @@
+{
+  "common": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "close": "Close"
+  },
+  "components": {
+    "button": {
+      "submit": "Submit",
+      "reset": "Reset"
+    },
+    "alert": {
+      "info": "Information",
+      "warning": "Warning",
+      "error": "Error",
+      "success": "Success"
+    },
+    "input": {
+      "placeholder": "Please enter"
+    },
+    "switch": {
+      "on": "ON",
+      "off": "OFF"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "common": {
+    "confirm": "确认",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "add": "添加",
+    "close": "关闭"
+  },
+  "components": {
+    "button": {
+      "submit": "提交",
+      "reset": "重置"
+    },
+    "alert": {
+      "info": "信息",
+      "warning": "警告",
+      "error": "错误",
+      "success": "成功"
+    },
+    "input": {
+      "placeholder": "请输入"
+    },
+    "switch": {
+      "on": "开启",
+      "off": "关闭"
+    }
+  }
+}

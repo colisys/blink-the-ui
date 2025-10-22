@@ -1,0 +1,37 @@
+{
+  "name": "@blink-the-ui/test",
+  "version": "1.0.0",
+  "description": "Test utils for blink-the-ui",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "blink-the-ui",
+    "vue3",
+    "helper"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "jsdom": "^27.0.1",
+    "vitest": "^3.2.4",
+    "@blink-the-ui/components": "workspace:components",
+    "@blink-the-ui/animations": "workspace:animations",
+    "@blink-the-ui/directives": "workspace:directives",
+    "@blink-the-ui/i18n": "workspace:i18n",
+    "@blink-the-ui/helper": "workspace:helper",
+    "@vue/test-utils": "^2.4.6"
+  },
+  "peerDependencies": {
+    "@vue/tsconfig": "^0.8.1",
+    "prettier": "^3.6.2",
+    "typescript": "~5.9.3",
+    "vue": "^3.0.0",
+    "vue-tsc": "^3.1.0"
+  },
+  "vitest": {
+    "environment": "jsdom"
+  }
+}

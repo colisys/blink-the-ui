@@ -1,0 +1,28 @@
+{
+  "name": "@blink-the-ui/docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev .",
+    "docs:build": "vitepress build .",
+    "docs:preview": "vitepress preview .",
+    "register:components": "vitepress --docsDir ./src --componentsDir ./.vitepress/theme/components"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@blink-the-ui/animations": "workspace:animations",
+    "@blink-the-ui/components": "workspace:components",
+    "@types/markdown-it": "^14.1.2",
+    "@types/markdown-it-container": "^2.0.10",
+    "markdown-it": "^14.1.0",
+    "vitepress": "2.0.0-alpha.12",
+    "vue": "^3.5.22"
+  },
+  "dependencies": {
+    "markdown-it-container": "^4.0.0",
+    "shiki": "^3.13.0"
+  }
+}

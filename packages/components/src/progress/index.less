@@ -1,0 +1,88 @@
+@import '../index.less';
+
+@progress-class-name: ~'blink-progress';
+
+.@{progress-class-name} {
+  &-wrapper {
+    position: relative;
+    width: 300px;
+    height: 4px;
+    overflow: hidden;
+
+    &:has(.@{progress-class-name}--with-text) {
+      height: 20px;
+    }
+  }
+
+  &-background {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-bar {
+    transition: width 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &.striped {
+      background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+      );
+      background-size: 1rem 1rem;
+    }
+
+    &.animated {
+      animation: progress-bar-stripes 1s linear infinite;
+    }
+
+    &.animated:not(.striped) {
+      animation: progress-pulse 1s ease-in-out infinite;
+    }
+
+    &.infinite {
+      width: 30%;
+      animation: progress-infinite 2s linear infinite;
+    }
+  }
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 1rem 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes progress-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// 添加无限滚动动画
+@keyframes progress-infinite {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 100%;
+  }
+}
