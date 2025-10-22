@@ -21,6 +21,7 @@
     "typescript"
   ],
   "author": "colisys <colisys@duck.com>",
+  "type": "commonjs",
   "license": "MIT",
   "devDependencies": {
     "vitepress": "^1.6.4",
