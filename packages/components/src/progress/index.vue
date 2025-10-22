@@ -39,7 +39,7 @@
 import { defineComponent, ref, watch, type PropType } from 'vue';
 import type { GlobalVisual } from '../types';
 import { getColor } from '../../../helper/src';
-import { BlinkProgressController } from '.';
+import { type BlinkProgressController } from '.';
 
 export default defineComponent({
   name: 'BlinkProgress',
