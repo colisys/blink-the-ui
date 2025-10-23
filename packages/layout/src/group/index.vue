@@ -1,17 +1,17 @@
 <template>
-  <div class="blink-group-wrapper">
+  <div class="blink-layout-group-wrapper">
     <slot name="title" v-if="$slots.title">
-      <div class="blink-group-title">{{ title }}</div>
+      <div class="blink-layout-group-title">{{ title }}</div>
       <hr />
     </slot>
     <div
-      class="blink-group"
+      class="blink-layout-group"
       :class="{
-        [`blink-group--${direction}`]: direction,
-        [`blink-group--justify-${justify}`]: justify,
-        [`blink-group--align-${alignment}`]: alignment,
-        [`blink-group--${wrap}`]: wrap,
-        [`blink-group--fill`]: fill,
+        [`blink-layout-group--${direction}`]: direction,
+        [`blink-layout-group--justify-${justify}`]: justify,
+        [`blink-layout-group--align-${alignment}`]: alignment,
+        [`blink-layout-group--${wrap}`]: wrap,
+        [`blink-layout-group--fill`]: fill,
       }"
       :style="{
         gap,

@@ -14,7 +14,8 @@
     "@blink-the-ui/animations": "workspace:animations",
     "@blink-the-ui/directives": "workspace:directives",
     "@blink-the-ui/i18n": "workspace:i18n",
-    "@blink-the-ui/overlays": "workspace:overlays"
+    "@blink-the-ui/overlays": "workspace:overlays",
+    "@blink-the-ui/layout": "workspace:layout"
   },
   "devDependencies": {
     "@types/node": "^24.6.0",

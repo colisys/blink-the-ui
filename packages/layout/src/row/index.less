@@ -1,0 +1,58 @@
+@import '../index.less';
+
+@row-class-name: ~'blink-layout-row';
+
+.@{row-class-name} {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  
+  &--wrap {
+    flex-wrap: wrap;
+  }
+  
+  &--justify-start {
+    justify-content: flex-start;
+  }
+  
+  &--justify-center {
+    justify-content: center;
+  }
+  
+  &--justify-end {
+    justify-content: flex-end;
+  }
+  
+  &--justify-between {
+    justify-content: space-between;
+  }
+  
+  &--justify-around {
+    justify-content: space-around;
+  }
+  
+  &--justify-evenly {
+    justify-content: space-evenly;
+  }
+  
+  &--align-start {
+    align-items: flex-start;
+  }
+  
+  &--align-center {
+    align-items: center;
+  }
+  
+  &--align-end {
+    align-items: flex-end;
+  }
+  
+  &--align-baseline {
+    align-items: baseline;
+  }
+  
+  &--align-stretch {
+    align-items: stretch;
+  }
+}

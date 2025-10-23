@@ -2,7 +2,6 @@ import type { App } from 'vue';
 import './index.less';
 import BlinkButton from './button';
 import BlinkSwitch from './switch';
-import BlinkGroup from './group';
 import BlinkText from './text';
 import BlinkLabel from './label';
 import BlinkAlert from './alert';
@@ -12,7 +11,6 @@ import BlinkProgress from './progress';
 export {
   BlinkButton,
   BlinkSwitch,
-  BlinkGroup,
   BlinkText,
   BlinkLabel,
   BlinkAlert,
@@ -32,9 +30,6 @@ export default {
       app.component(mod.default.name!, mod.default)
     );
     import('./switch').then(mod =>
-      app.component(mod.default.name!, mod.default)
-    );
-    import('./group').then(mod =>
       app.component(mod.default.name!, mod.default)
     );
     import('./text').then(mod => app.component(mod.default.name!, mod.default));

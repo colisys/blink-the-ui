@@ -4,7 +4,6 @@
     [x] - Button
     [ ] - Checkbox
     [ ] - Form
-    [x] - Group
     [x] - Input
     [x] - Label
     [x] - Progress
@@ -14,6 +13,11 @@
     [x] - Text
     [ ] - Tree
     [ ] - Upload
+    [ ] - Accordion
+    [ ] - Badge
+    [ ] - Breadcrumb
+    [ ] - Card
+    [ ] - Carousel
     ...
 
 [ ] Animations
@@ -41,6 +45,22 @@
     [ ] - Overlay
     [ ] - Popup
     [ ] - Tooltip
+    [ ] - Loading
+    [ ] - Toast
+    ...
+
+[ ] Layouts
+    [x] - Grid
+    [x] - Row
+    [x] - Col
+    [x] - Group
+    [x] - Stacked
+    [x] - Container
+    [ ] - Tabs
+    [ ] - Collapse
+    [ ] - Divider
+    [ ] - Layout
+    [ ] - Menu
     ...
 
 [ ] Testing

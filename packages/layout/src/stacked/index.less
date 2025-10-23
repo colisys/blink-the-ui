@@ -1,0 +1,32 @@
+@import '../index.less';
+
+@stacked-class-name: ~'blink-layout-stacked';
+
+.@{stacked-class-name} {
+  display: flex;
+  position: relative;
+  
+  &--column {
+    flex-direction: column;
+    
+    :deep(> *) {
+      &:not(:first-child) {
+        margin-top: calc(-1 * var(--blink-stacked-overlap, 16px));
+      }
+    }
+  }
+  
+  &--row {
+    flex-direction: row;
+    
+    :deep(> *) {
+      &:not(:first-child) {
+        margin-left: calc(-1 * var(--blink-stacked-overlap, 16px));
+      }
+    }
+  }
+  
+  :deep(> *) {
+    position: relative;
+  }
+}

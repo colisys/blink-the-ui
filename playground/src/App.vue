@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {
   BlinkButton as Button,
-  BlinkGroup as Group,
   BlinkSwitch as Switch,
   BlinkText as Text,
   BlinkLabel,
@@ -17,6 +16,7 @@ import {
   BlinkAnimStacked,
 } from '@blink-the-ui/animations';
 
+import { BlinkGroup as Group } from '@blink-the-ui/layout';
 import { BlinkOverlay, createOverlay } from '@blink-the-ui/overlays';
 
 import { ref } from 'vue';

@@ -1,5 +1,5 @@
 {
-  "name": "@blink-the-ui/components",
+  "name": "@blink-the-ui/layout",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,11 +12,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
-    "@blink-the-ui/animations": "workspace:animations",
-    "@blink-the-ui/directives": "workspace:directives",
     "@blink-the-ui/i18n": "workspace:i18n",
-    "@blink-the-ui/overlays": "workspace:overlays",
-    "@blink-the-ui/layout": "workspace:layout",
     "vue": "^3.5.22",
     "vue-i18n": "^9.0.0"
   },

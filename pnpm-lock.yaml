@@ -100,6 +100,9 @@ importers:
       '@blink-the-ui/i18n':
         specifier: workspace:i18n
         version: link:../i18n
+      '@blink-the-ui/layout':
+        specifier: workspace:layout
+        version: link:../layout
       '@blink-the-ui/overlays':
         specifier: workspace:overlays
         version: link:../overlays
@@ -229,6 +232,52 @@ importers:
         specifier: ^3.1.0
         version: 3.1.1(typescript@5.9.3)
 
+  packages/layout:
+    dependencies:
+      '@blink-the-ui/i18n':
+        specifier: workspace:i18n
+        version: link:../i18n
+      vue:
+        specifier: ^3.5.22
+        version: 3.5.22(typescript@5.9.3)
+      vue-i18n:
+        specifier: ^9.0.0
+        version: 9.14.5(vue@3.5.22(typescript@5.9.3))
+    devDependencies:
+      '@types/less':
+        specifier: ^3.0.8
+        version: 3.0.8
+      '@types/node':
+        specifier: ^24.6.0
+        version: 24.7.2
+      '@vitejs/plugin-vue':
+        specifier: ^6.0.1
+        version: 6.0.1(vite@7.1.9(@types/node@24.7.2)(less@4.4.2)(lightningcss@1.30.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))
+      '@vitejs/plugin-vue-jsx':
+        specifier: ^5.1.1
+        version: 5.1.1(vite@7.1.9(@types/node@24.7.2)(less@4.4.2)(lightningcss@1.30.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))
+      '@vue/babel-plugin-jsx':
+        specifier: ^2.0.1
+        version: 2.0.1(@babel/core@7.28.4)
+      '@vue/tsconfig':
+        specifier: ^0.8.1
+        version: 0.8.1(typescript@5.9.3)(vue@3.5.22(typescript@5.9.3))
+      less:
+        specifier: ^4.4.2
+        version: 4.4.2
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
+      typescript:
+        specifier: ~5.9.3
+        version: 5.9.3
+      vite:
+        specifier: ^7.1.9
+        version: 7.1.9(@types/node@24.7.2)(less@4.4.2)(lightningcss@1.30.2)(yaml@2.8.1)
+      vue-tsc:
+        specifier: ^3.1.0
+        version: 3.1.1(typescript@5.9.3)
+
   packages/overlays:
     dependencies:
       '@blink-the-ui/animations':
@@ -340,6 +389,9 @@ importers:
       '@blink-the-ui/i18n':
         specifier: workspace:i18n
         version: link:../packages/i18n
+      '@blink-the-ui/layout':
+        specifier: workspace:layout
+        version: link:../packages/layout
       '@blink-the-ui/overlays':
         specifier: workspace:overlays
         version: link:../packages/overlays

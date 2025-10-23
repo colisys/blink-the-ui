@@ -1,0 +1,46 @@
+@import '../index.less';
+
+@col-class-name: ~'blink-layout-col';
+
+.@{col-class-name} {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  box-sizing: border-box;
+}
+
+.generate-col(@size: xs, @n: 1) when (@n =< 24) {
+  .@{col-class-name}-@{size}-@{n} {
+    display: block;
+    flex: 0 0 percentage((@n / 24));
+    max-width: percentage((@n / 24));
+  }
+  
+  .@{col-class-name}-@{size}-offset-@{n} {
+    margin-left: percentage((@n / 24));
+  }
+  
+  .@{col-class-name}-@{size}-push-@{n} {
+    left: percentage((@n / 24));
+  }
+  
+  .@{col-class-name}-@{size}-pull-@{n} {
+    right: percentage((@n / 24));
+  }
+  
+  .generate-col(@size, (@n + 1));
+}
+
+.generate-col(xs);
+
+@media (min-width: 576px) {
+  .generate-col(sm);
+}
+
+@media (min-width: 768px) {
+  .generate-col(md);
+}
+
+@media (min-width: 992px) {
+  .generate-col(lg);
+}

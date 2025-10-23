@@ -7,4 +7,4 @@ export type GlobalVisual =
   | 'light'
   | 'dark';
 
-export type GlobalComponentSize = 'xs' | 'sm' | 'md' | 'lg';
+export { type GlobalComponentSize } from '@blink-the-ui/layout/src/types';
