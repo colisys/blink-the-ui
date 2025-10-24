@@ -1,6 +1,6 @@
 export type GlobalComponentSize = 'xs' | 'sm' | 'md' | 'lg';
 
-export type HorizontalAlignment = 
+export type HorizontalAlignment =
   | 'start'
   | 'center'
   | 'end'
@@ -8,7 +8,7 @@ export type HorizontalAlignment =
   | 'around'
   | 'evenly';
 
-export type VerticalAlignment = 
+export type VerticalAlignment =
   | 'start'
   | 'center'
   | 'end'

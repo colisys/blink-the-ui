@@ -112,7 +112,7 @@ const handleTouchStart = (
 const mounted = (el: HTMLElement, binding: DirectiveBinding, vnode: VNode) => {
   const wrapper = document.createElement('div');
   wrapper.className = 'blink-ripple-container';
-  
+
   const options: RippleDirectiveOptions = binding.value || {};
   if (options.flexible) {
     wrapper.classList.add('blink-ripple-flexible');
@@ -141,7 +141,7 @@ const unmounted = (el: HTMLElement) => {
     el.removeEventListener('touchstart', handlers.touchstart);
     eventHandlers.delete(el);
   }
-  
+
   if (el.parentNode && el.classList.contains('blink-ripple-container')) {
     const parent = el.parentNode;
     const childNodes = Array.from(el.childNodes);

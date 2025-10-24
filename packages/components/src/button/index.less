@@ -47,7 +47,9 @@
       color: var(--global-light-color);
     }
 
-    &:focus:not(.@{button-prefix-cls}--disabled).@{button-prefix-cls}--focus-shadow {
+    &:focus:not(
+        .@{button-prefix-cls}--disabled
+      ).@{button-prefix-cls}--focus-shadow {
       box-shadow: 0 0 0 2px var(~'@{color-variable}');
     }
   }

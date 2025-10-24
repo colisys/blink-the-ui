@@ -13,9 +13,9 @@ Input 组件允许用户以各种格式输入和编辑文本或数值。
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const inputValue = ref('')
+const inputValue = ref('');
 </script>
 ```
 
@@ -33,11 +33,11 @@ const inputValue = ref('')
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const small = ref('')
-const medium = ref('')
-const large = ref('')
+const small = ref('');
+const medium = ref('');
+const large = ref('');
 </script>
 ```
 
@@ -55,11 +55,11 @@ const large = ref('')
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const text = ref('')
-const password = ref('')
-const email = ref('')
+const text = ref('');
+const password = ref('');
+const email = ref('');
 </script>
 ```
 
@@ -75,9 +75,9 @@ const email = ref('')
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const disabledValue = ref('')
+const disabledValue = ref('');
 </script>
 ```
 
@@ -93,9 +93,9 @@ const disabledValue = ref('')
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const clearableValue = ref('')
+const clearableValue = ref('');
 </script>
 ```
 
@@ -105,30 +105,30 @@ const clearableValue = ref('')
 
 ### Props
 
-| Prop | 描述 | 类型 | 默认值 |
-|------|-------------|------|---------|
-| modelValue | 输入框值 (v-model) | `string \| number` | `''` |
-| type | 输入框类型 | `string` | `'text'` |
-| placeholder | 占位符文本 | `string` | `undefined` |
-| size | 输入框尺寸 | `'small' \| 'medium' \| 'large'` | `'medium'` |
-| disabled | 输入框是否禁用 | `boolean` | `false` |
-| readonly | 输入框是否只读 | `boolean` | `false` |
-| rounded | 输入框是否有圆角 | `boolean` | `false` |
-| clearable | 是否显示清除按钮 | `boolean` | `false` |
+| Prop        | 描述               | 类型                             | 默认值      |
+| ----------- | ------------------ | -------------------------------- | ----------- |
+| modelValue  | 输入框值 (v-model) | `string \| number`               | `''`        |
+| type        | 输入框类型         | `string`                         | `'text'`    |
+| placeholder | 占位符文本         | `string`                         | `undefined` |
+| size        | 输入框尺寸         | `'small' \| 'medium' \| 'large'` | `'medium'`  |
+| disabled    | 输入框是否禁用     | `boolean`                        | `false`     |
+| readonly    | 输入框是否只读     | `boolean`                        | `false`     |
+| rounded     | 输入框是否有圆角   | `boolean`                        | `false`     |
+| clearable   | 是否显示清除按钮   | `boolean`                        | `false`     |
 
 ### Events
 
-| 事件 | 描述 | 参数 |
-|-------|-------------|------------|
-| update:modelValue | 输入框值变化时触发 | `string \| number` |
-| focus | 输入框获得焦点时触发 | `FocusEvent` |
-| blur | 输入框失去焦点时触发 | `FocusEvent` |
-| clear | 点击清除按钮时触发 | - |
+| 事件              | 描述                 | 参数               |
+| ----------------- | -------------------- | ------------------ |
+| update:modelValue | 输入框值变化时触发   | `string \| number` |
+| focus             | 输入框获得焦点时触发 | `FocusEvent`       |
+| blur              | 输入框失去焦点时触发 | `FocusEvent`       |
+| clear             | 点击清除按钮时触发   | -                  |
 
 ### Slots
 
-| 插槽 | 描述 |
-|------|-------------|
+| 插槽   | 描述                 |
+| ------ | -------------------- |
 | prefix | 显示在输入框前的内容 |
 | suffix | 显示在输入框后的内容 |
 

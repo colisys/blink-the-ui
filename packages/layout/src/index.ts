@@ -15,6 +15,8 @@ export default {
     import('./row').then(mod => app.component(mod.default.name!, mod.default));
     import('./col').then(mod => app.component(mod.default.name!, mod.default));
     import('./grid').then(mod => app.component(mod.default.name!, mod.default));
-    import('./stacked').then(mod => app.component(mod.default.name!, mod.default));
+    import('./stacked').then(mod =>
+      app.component(mod.default.name!, mod.default)
+    );
   },
 };

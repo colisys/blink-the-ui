@@ -1,4 +1,4 @@
-@import "../index.less";
+@import '../index.less';
 
 @switch-class-name: ~'blink-switch';
 @switch-input-class-name: ~'blink-switch-input';
@@ -86,7 +86,11 @@
   }
 
   &--checked {
-    border-color: color-mix(in srgb, var(--global-primary-color) 100%, var(--global-dark-color) 50%);
+    border-color: color-mix(
+      in srgb,
+      var(--global-primary-color) 100%,
+      var(--global-dark-color) 50%
+    );
     background-color: var(--global-primary-color);
 
     & .@{switch-class-name}-handle {

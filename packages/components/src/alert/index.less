@@ -7,62 +7,65 @@
 @alert-size-medium: 20px;
 @alert-size-large: 24px;
 
-
 .@{alert-class-name} {
-    padding: 4px 8px;
-    text-align: left;
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: var(--global-border-radius);
+  padding: 4px 8px;
+  text-align: left;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--global-border-radius);
 
-    &-content {
-        padding: 4px;
-    }
+  &-content {
+    padding: 4px;
+  }
 
-    &--visual-default {
-        background-color: color-mix(in srgb, var(--global-light-color) 100%, var(--global-dark-color) 10%);
-        border: 1px solid var(--global-border-color);
-    }
+  &--visual-default {
+    background-color: color-mix(
+      in srgb,
+      var(--global-light-color) 100%,
+      var(--global-dark-color) 10%
+    );
+    border: 1px solid var(--global-border-color);
+  }
 
-    &--visual-primary {
-        background-color: var(--global-primary-color);
-        color: var(--global-light-color);
-    }
+  &--visual-primary {
+    background-color: var(--global-primary-color);
+    color: var(--global-light-color);
+  }
 
-    &--visual-success {
-        background-color: var(--global-success-color);
-        color: var(--global-light-color);
-    }
+  &--visual-success {
+    background-color: var(--global-success-color);
+    color: var(--global-light-color);
+  }
 
-    &--visual-warning {
-        background-color: var(--global-warning-color);
-    }
+  &--visual-warning {
+    background-color: var(--global-warning-color);
+  }
 
-    &--visual-danger {
-        background-color: var(--global-danger-color);
-        color: var(--global-light-color);
-    }
+  &--visual-danger {
+    background-color: var(--global-danger-color);
+    color: var(--global-light-color);
+  }
 
-    &--visual-info {
-        background-color: var(--global-info-color);
-        color: var(--global-light-color);
-    }
+  &--visual-info {
+    background-color: var(--global-info-color);
+    color: var(--global-light-color);
+  }
 
-    &--size-sm {
-        font-size: @alert-size-small;
-    }
+  &--size-sm {
+    font-size: @alert-size-small;
+  }
 
-    &--size-md {
-        font-size: @alert-size-medium;
-    }
+  &--size-md {
+    font-size: @alert-size-medium;
+  }
 
-    &--size-lg {
-        font-size: @alert-size-large;
-    }
+  &--size-lg {
+    font-size: @alert-size-large;
+  }
 
-    &--size-xs {
-        font-size: @alert-size-extra-small;
-    }
+  &--size-xs {
+    font-size: @alert-size-extra-small;
+  }
 }
