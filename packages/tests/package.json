@@ -12,7 +12,7 @@
     "vue3",
     "helper"
   ],
-  "author": "",
+  "author": "colisys <colisys@duck.com>",
   "license": "MIT",
   "dependencies": {
     "jsdom": "^27.0.1",

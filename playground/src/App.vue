@@ -8,6 +8,7 @@ import {
   BlinkInput,
   BlinkProgress,
   GlobalVisual,
+  BlinkCheckbox,
 } from '@blink-the-ui/components';
 
 import {
@@ -16,7 +17,10 @@ import {
   BlinkAnimStacked,
 } from '@blink-the-ui/animations';
 
-import { BlinkGroup as Group } from '@blink-the-ui/layout';
+import {
+  BlinkGroup as Group,
+  BlinkStacked as Stacked,
+} from '@blink-the-ui/layout';
 import { BlinkOverlay, createOverlay } from '@blink-the-ui/overlays';
 
 import { ref } from 'vue';
@@ -139,15 +143,13 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
     <h1>Blink UI Playground</h1>
 
     <Group direction="vertical" alignment="center" gap="8px">
-      <Group title="Button Sets" justify="center" fill>
-        <BlinkAnimRipple style="flex-shrink: none">
-          <Button>Default Button</Button>
-        </BlinkAnimRipple>
-        <Button visual="primary" v-blink-ripple>Primary Button</Button>
-        <Button visual="danger" v-blink-ripple>Danger Button</Button>
-        <Button visual="warning" v-blink-ripple>Warning Button</Button>
-        <Button visual="success" v-blink-ripple>Success Button</Button>
-      </Group>
+      <Stacked direction="horizontal" gap="8px" overlap="100px">
+        <Button>Default Button</Button>
+        <Button visual="primary" focus-shadow>Primary Button</Button>
+        <Button visual="danger">Danger Button</Button>
+        <Button visual="warning">Warning Button</Button>
+        <Button visual="success">Success Button</Button>
+      </Stacked>
 
       <Group justify="center" fill>
         <Button disabled>Default Button</Button>
@@ -272,6 +274,12 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
         color="primary"
         :updater="handleUpdateProgress"
       ></BlinkProgress>
+
+      <Group justify="center" fill>
+        <BlinkCheckbox></BlinkCheckbox>
+        <BlinkCheckIcon></BlinkCheckIcon>
+        <BlinkTestIcon></BlinkTestIcon>
+      </Group>
     </Group>
 
     <div v-blink-datetime>2025/10/19 00:00:00</div>

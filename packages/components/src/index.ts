@@ -7,6 +7,8 @@ import BlinkLabel from './label';
 import BlinkAlert from './alert';
 import BlinkInput from './input';
 import BlinkProgress from './progress';
+import BlinkCheckbox from './checkbox';
+import BlinkForm from './form';
 
 export {
   BlinkButton,
@@ -16,6 +18,8 @@ export {
   BlinkAlert,
   BlinkInput,
   BlinkProgress,
+  BlinkCheckbox,
+  BlinkForm,
 };
 
 export * from './types';
@@ -45,6 +49,10 @@ export default {
     import('./progress').then(mod =>
       app.component(mod.default.name!, mod.default)
     );
+    import('./checkbox').then(mod =>
+      app.component(mod.default.name!, mod.default)
+    );
+    import('./form').then(mod => app.component(mod.default.name!, mod.default));
 
     i18n.global.locale.value = 'zh';
     i18n.install(app);

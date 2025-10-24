@@ -1,10 +1,13 @@
 <template>
-  <div 
+  <div
     class="blink-layout-stacked"
-    :class="`blink-layout-stacked--${direction}`"
+    :class="[
+      `blink-layout-stacked--${direction}`,
+      showOnHover ? 'blink-layout-stacked--show-on-hover' : '',
+    ]"
     :style="{
       '--blink-stacked-gap': gap,
-      '--blink-stacked-overlap': overlap
+      '--blink-stacked-overlap': overlap,
     }"
   >
     <slot></slot>
@@ -16,7 +19,7 @@
 </style>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, type PropType } from 'vue';
 
 export default defineComponent({
   name: 'BlinkStacked',
@@ -26,13 +29,17 @@ export default defineComponent({
       default: '4px',
     },
     direction: {
-      type: String,
-      default: 'column',
-      validator: (value: string) => ['column', 'row'].includes(value),
+      type: String as PropType<'vertical' | 'horizontal'>,
+      default: 'horizontal',
+      validator: (value: string) => ['vertical', 'horizontal'].includes(value),
     },
     overlap: {
       type: String,
       default: '16px',
+    },
+    showOnHover: {
+      type: Boolean,
+      default: true,
     },
   },
   setup() {

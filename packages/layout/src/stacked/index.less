@@ -3,30 +3,56 @@
 @stacked-class-name: ~'blink-layout-stacked';
 
 .@{stacked-class-name} {
+  transition: all 0.3s ease-out;
   display: flex;
   position: relative;
-  
-  &--column {
+
+  &--vertical {
     flex-direction: column;
-    
+
     :deep(> *) {
       &:not(:first-child) {
         margin-top: calc(-1 * var(--blink-stacked-overlap, 16px));
       }
     }
   }
-  
-  &--row {
+
+  &--horizontal {
     flex-direction: row;
-    
+
     :deep(> *) {
       &:not(:first-child) {
         margin-left: calc(-1 * var(--blink-stacked-overlap, 16px));
       }
     }
   }
-  
+
   :deep(> *) {
     position: relative;
+  }
+
+  &--show-on-hover {
+    :deep(> *) {
+      &:not(:last-child):hover {
+        margin: 0 !important;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+
+    &.@{stacked-class-name}--vertical {
+      :deep(> *) {
+        &:not(:last-child):hover {
+          transform: translate(0, -80%) scale(1.1);
+        }
+      }
+    }
+
+    &.@{stacked-class-name}--horizontal {
+      :deep(> *) {
+        &:not(:last-child):hover {
+          transform: translate(-80%, 0) scale(1.1);
+        }
+      }
+    }
   }
 }

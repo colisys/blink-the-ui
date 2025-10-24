@@ -6,9 +6,11 @@ import {
   BlinkPrettierDatetimeDirective,
   BlinkRippleDirective,
 } from '@blink-the-ui/directives';
+import BlinkIcons from '@blink-the-ui/icons';
 
 createApp(App)
   .use(BlinkUI)
+  .use(BlinkIcons)
   .directive('blink-ripple', BlinkRippleDirective)
   .directive('blink-datetime', BlinkPrettierDatetimeDirective)
   .mount('#app');

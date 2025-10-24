@@ -21,6 +21,7 @@
     "vue3",
     "directives"
   ],
+  "author": "colisys <colisys@duck.com>",
   "devDependencies": {
     "@types/less": "^3.0.8",
     "@types/node": "^24.6.0",

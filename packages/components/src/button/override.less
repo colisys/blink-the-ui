@@ -1,0 +1,23 @@
+@import '../index.less';
+
+@button-prefix-cls: ~'blink-button';
+
+.@{blink-group-class-name} {
+  &:has(> .@{button-prefix-cls}) {
+    gap: 0 !important;
+
+    .@{button-prefix-cls} {
+      &:first-child {
+        border-top-left-radius: @border-radius!important;
+        border-bottom-left-radius: @border-radius!important;
+      }
+
+      &:last-child {
+        border-top-right-radius: @border-radius!important;
+        border-bottom-right-radius: @border-radius!important;
+      }
+
+      border-radius: 0 !important;
+    }
+  }
+}

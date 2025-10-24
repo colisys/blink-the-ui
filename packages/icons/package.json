@@ -1,7 +1,7 @@
 {
-  "name": "@blink-the-ui/i18n",
+  "name": "@blink-the-ui/icons",
   "version": "1.0.0",
-  "description": "i18n support for blink-the-ui",
+  "description": "Icons for blink-the-ui",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
@@ -10,19 +10,25 @@
   "keywords": [
     "blink-the-ui",
     "vue3",
-    "i18n",
-    "internationalization"
+    "icons"
   ],
+  "type": "commonjs",
   "author": "colisys <colisys@duck.com>",
   "license": "MIT",
   "dependencies": {
     "vue-i18n": "^9.0.0"
   },
   "peerDependencies": {
-    "vue": "^3.0.0",
     "@vue/tsconfig": "^0.8.1",
     "prettier": "^3.6.2",
     "typescript": "~5.9.3",
+    "vue": "^3.0.0",
     "vue-tsc": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitejs/plugin-vue-jsx": "^5.1.1",
+    "vite": "^7.1.9"
   }
 }

@@ -1,0 +1,72 @@
+@import '../index.less';
+
+@checkbox-class-name: ~'blink-checkbox';
+
+@checkbox-size-xs: 12px;
+@checkbox-size-sm: 16px;
+@checkbox-size-md: 20px;
+@checkbox-size-lg: 24px;
+
+.checkbox-size(@size:@checkbox-size-md) {
+  display: block;
+  position: relative;
+  width: @size;
+  height: @size;
+}
+
+.@{checkbox-class-name} {
+  transition: all 0.3s ease;
+  border: 2px solid var(--global-border-color);
+  border-radius: var(--global-border-radius);
+  position: relative;
+
+  &-checked {
+    border-color: var(--global-primary-color);
+  }
+
+  &-checked-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--global-primary-color);
+  }
+
+  &-indeterminate-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--global-primary-color);
+  }
+
+  &:hover {
+    border-color: var(--global-primary-color);
+  }
+
+  &--size-xs {
+    .checkbox-size(@checkbox-size-xs);
+  }
+
+  &--size-sm {
+    .checkbox-size(@checkbox-size-sm);
+  }
+
+  &--size-md {
+    .checkbox-size(@checkbox-size-md);
+  }
+
+  &--size-lg {
+    .checkbox-size(@checkbox-size-lg);
+  }
+
+  &-wrapper {
+    display: inline-block;
+  }
+
+  &-input {
+    display: none;
+  }
+}

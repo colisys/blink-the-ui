@@ -6,6 +6,7 @@
       [`blink-button--outline-${outline}`]: outline,
       [`blink-button--disabled`]: disabled,
       [`blink-button--size-${size}`]: size,
+      [`blink-button--focus-shadow`]: focusShadow,
     }"
     :disabled="disabled"
     @click="handleClick"
@@ -19,6 +20,10 @@
     <slot name="suffix"></slot>
   </button>
 </template>
+
+<style lang="less">
+@import './override.less';
+</style>
 
 <style lang="less" scoped>
 @import './index.less';
@@ -61,6 +66,10 @@ export default defineComponent({
     type: {
       type: String as PropType<ButtonHTMLAttributes['type']>,
       default: 'button',
+    },
+    focusShadow: {
+      type: Boolean,
+      default: false,
     },
   },
   emits: {
