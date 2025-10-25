@@ -54,8 +54,8 @@ export default {
     );
     import('./form').then(mod => app.component(mod.default.name!, mod.default));
 
-    i18n.global.locale.value = 'zh';
-    i18n.install(app);
+    // 确保在安装 Overlay 之前安装 i18n
+    app.use(i18n);
     Overlay.install(app);
   },
 };

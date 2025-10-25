@@ -51,6 +51,10 @@
 
 <style lang="less" scoped>
 @import './index.less';
+
+.@{input-class-name} {
+  width: v-bind(inputWidth);
+}
 </style>
 
 <script lang="ts">

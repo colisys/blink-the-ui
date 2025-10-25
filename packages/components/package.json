@@ -17,6 +17,7 @@
     "@blink-the-ui/i18n": "workspace:i18n",
     "@blink-the-ui/overlays": "workspace:overlays",
     "@blink-the-ui/layout": "workspace:layout",
+    "@blink-the-ui/theme": "workspace:theme",
     "vue": "^3.5.22",
     "vue-i18n": "^9.0.0"
   },

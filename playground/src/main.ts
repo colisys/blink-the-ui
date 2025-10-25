@@ -8,9 +8,11 @@ import {
 } from '@blink-the-ui/directives';
 import BlinkIcons from '@blink-the-ui/icons';
 
-createApp(App)
+const app = createApp(App);
+app
   .use(BlinkUI)
   .use(BlinkIcons)
   .directive('blink-ripple', BlinkRippleDirective)
-  .directive('blink-datetime', BlinkPrettierDatetimeDirective)
-  .mount('#app');
+  .directive('blink-datetime', BlinkPrettierDatetimeDirective);
+
+app.mount('#app');

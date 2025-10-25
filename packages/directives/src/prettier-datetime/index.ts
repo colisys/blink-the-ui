@@ -73,8 +73,6 @@ const updateTimeDisplay = (el: HTMLElement, binding: DirectiveBinding) => {
   const options: DatetimeOptions = { ...defaultOptions, ...binding.value };
   let timeString: string;
 
-  console.log(binding);
-
   // 获取时间字符串
   if (binding.arg === 'textContent') {
     // 从绑定值获取文本内容

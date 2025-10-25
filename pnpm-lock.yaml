@@ -115,6 +115,9 @@ importers:
       '@blink-the-ui/overlays':
         specifier: workspace:overlays
         version: link:../overlays
+      '@blink-the-ui/theme':
+        specifier: workspace:theme
+        version: link:../theme
       vue:
         specifier: ^3.5.22
         version: 3.5.22(typescript@5.9.3)
@@ -280,6 +283,9 @@ importers:
       '@blink-the-ui/i18n':
         specifier: workspace:i18n
         version: link:../i18n
+      '@blink-the-ui/theme':
+        specifier: workspace:theme
+        version: link:../theme
       vue:
         specifier: ^3.5.22
         version: 3.5.22(typescript@5.9.3)
@@ -335,6 +341,9 @@ importers:
       '@blink-the-ui/i18n':
         specifier: workspace:i18n
         version: link:../i18n
+      '@blink-the-ui/theme':
+        specifier: workspace:theme
+        version: link:../theme
       vue:
         specifier: ^3.5.22
         version: 3.5.22(typescript@5.9.3)
@@ -411,6 +420,24 @@ importers:
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.9.1)(jsdom@27.0.1(postcss@8.5.6))(less@4.4.2)(lightningcss@1.30.2)(yaml@2.8.1)
+      vue:
+        specifier: ^3.0.0
+        version: 3.5.22(typescript@5.9.3)
+      vue-tsc:
+        specifier: ^3.1.0
+        version: 3.1.1(typescript@5.9.3)
+
+  packages/theme:
+    dependencies:
+      '@vue/tsconfig':
+        specifier: ^0.8.1
+        version: 0.8.1(typescript@5.9.3)(vue@3.5.22(typescript@5.9.3))
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
+      typescript:
+        specifier: ~5.9.3
+        version: 5.9.3
       vue:
         specifier: ^3.0.0
         version: 3.5.22(typescript@5.9.3)

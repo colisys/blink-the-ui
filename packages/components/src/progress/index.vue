@@ -3,17 +3,27 @@
     class="blink-progress-wrapper"
     :class="[{ 'blink-progress--with-text': showProgressText }]"
   >
-    <div class="blink-progress-background"></div>
+    <div class="blink-progress-container">
+      <div class="blink-progress-background"></div>
+      <div
+        class="blink-progress-bar"
+        :class="{
+          striped: striped,
+          animated: animated,
+          infinite: infinite,
+        }"
+        :style="[{ width: infinite ? '30%' : `${value}%` }]"
+      ></div>
+    </div>
     <div
-      class="blink-progress-bar"
-      :class="{
-        striped: striped,
-        animated: animated,
-        infinite: infinite,
+      class="blink-progress-progress-text"
+      :style="{
+        left: getTextPosition(value),
       }"
-      :style="[{ width: infinite ? '30%' : `${value}%` }]"
-    ></div>
-    <div class="blink-progress-progress-text">{{ `${value}%` }}</div>
+      v-if="showProgressText"
+    >
+      {{ `${value}%` }}
+    </div>
   </div>
 </template>
 
@@ -31,6 +41,11 @@
 
   &-bar {
     background-color: v-bind(color);
+  }
+
+  &-progress-text {
+    backdrop-filter: drop-shadow(0 0 10px var(--global-light-color));
+    color: v-bind(color);
   }
 }
 </style>
@@ -89,6 +104,23 @@ export default defineComponent({
       newValue => (value.value = newValue)
     );
 
+    // 计算文本位置，确保不超出进度条范围
+    const getTextPosition = (val: number) => {
+      if (val <= 0) return '0%';
+      if (val >= 100) return '100%';
+
+      // 文本宽度大约为40px，将其居中对齐到进度条末端
+      // 为了保证文本不会超出边界，需要根据百分比调整位置
+      const textWidthPercent = 2; // 假设文字宽度占总长度的2%
+      if (val < textWidthPercent) {
+        return `${textWidthPercent}%`;
+      } else if (val > 100 - textWidthPercent) {
+        return `${100 - textWidthPercent}%`;
+      } else {
+        return `${val}%`;
+      }
+    };
+
     const controller = {
       suspend: () => (infinite.value = false),
       resume: () => (infinite.value = true),
@@ -109,6 +141,7 @@ export default defineComponent({
       animated,
       striped,
       showProgressText,
+      getTextPosition,
     };
   },
 });

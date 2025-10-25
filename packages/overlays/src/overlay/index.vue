@@ -24,47 +24,112 @@
           @mouseup="handleEndMoving"
           @mousemove="handleMoving"
           @dblclick="handleMax"
+          v-if="display.header"
         >
-          <slot name="header">
-            <div class="blink-overlay-title">
-              <slot name="title"> </slot>
-            </div>
-            <slot name="header-buttons">
-              <div class="blink-overlay-header-buttons">
-                <span v-if="minable && resizable" @click="handleMin">{{
-                  isMin ? '&plus;' : '&minus;'
-                }}</span>
-                <span v-if="closeable" @click="handleClose">&times;</span>
+          <template v-if="slot?.header">
+            <component
+              v-for="(item, index) in Array.isArray(slot.header())
+                ? slot.header()
+                : [slot.header()]"
+              :key="index"
+              :is="item"
+            />
+          </template>
+          <slot name="header" v-else>
+            <template v-if="display.title">
+              <template v-if="slot?.title">
+                <component
+                  v-for="(item, index) in Array.isArray(slot.title())
+                    ? slot.title()
+                    : [slot.title()]"
+                  :key="index"
+                  :is="item"
+                />
+              </template>
+              <div class="blink-overlay-title" v-else>
+                <template v-if="slot?.title">
+                  <component
+                    v-for="(item, index) in Array.isArray(slot.title())
+                      ? slot.title()
+                      : [slot.title()]"
+                    :key="index"
+                    :is="item"
+                  />
+                </template>
+                <template v-else>{{ title }}</template>
               </div>
-            </slot>
-          </slot>
-        </div>
-        <div class="blink-overlay-body" v-show="!isMin">
-          <slot></slot>
-        </div>
-        <div class="blink-overlay-footer" v-show="!isMin">
-          <slot name="footer-title"> </slot>
-          <slot name="footer">
-            <div class="blink-overlay-footer-buttons">
-              <slot name="footer-buttons">
-                <BlinkButton visual="primary" size="sm" @click="handleClose">
-                  OK
-                </BlinkButton>
+            </template>
+            <template v-if="display['header-buttons']">
+              <template v-if="slot?.['header-buttons']">
+                <component
+                  v-for="(item, index) in slot['header-buttons']()"
+                  :key="index"
+                  :is="item"
+                />
+              </template>
+              <slot name="header-buttons" v-else>
+                <div class="blink-overlay-header-buttons">
+                  <span v-if="minable && resizable" @click="handleMin">{{
+                    isMin ? '&plus;' : '&minus;'
+                  }}</span>
+                  <span v-if="closeable" @click="handleClose">&times;</span>
+                </div>
               </slot>
-            </div>
+            </template>
           </slot>
-          <div
-            class="blink-overlay-footer-resize-handler"
-            :class="[
-              { [`blink-overlay-footer-resize-handler-active`]: isResizing },
-            ]"
-            v-if="!isMax && resizable"
-            @mousedown="handleStartResizing"
-            @mouseup="handleEndResizing"
-            @mousemove="handleResizing"
-            @mouseleave="handleEndResizing"
-          ></div>
         </div>
+        <template v-if="display.default">
+          <div class="blink-overlay-body" v-show="!isMin">
+            <template v-if="slot?.default">
+              <component
+                v-for="(item, index) in Array.isArray(slot.default())
+                  ? slot.default()
+                  : [slot.default()]"
+                :key="index"
+                :is="item"
+              />
+            </template>
+            <slot v-else>{{ body }}</slot>
+          </div>
+        </template>
+        <template v-if="display.footer">
+          <div class="blink-overlay-footer" v-show="!isMin">
+            <slot name="footer">
+              <slot name="footer-title"> </slot>
+              <template v-if="display['footer-buttons']">
+                <div class="blink-overlay-footer-buttons">
+                  <template v-if="slot?.['footer-buttons']">
+                    <component
+                      v-for="(item, index) in slot['footer-buttons']()"
+                      :key="index"
+                      :is="item"
+                    />
+                  </template>
+                  <slot name="footer-buttons" v-else>
+                    <BlinkButton
+                      visual="primary"
+                      size="sm"
+                      @click="handleClose"
+                    >
+                      OK
+                    </BlinkButton>
+                  </slot>
+                </div>
+              </template>
+            </slot>
+            <div
+              class="blink-overlay-footer-resize-handler"
+              :class="[
+                { [`blink-overlay-footer-resize-handler-active`]: isResizing },
+              ]"
+              v-if="!isMax && resizable"
+              @mousedown="handleStartResizing"
+              @mouseup="handleEndResizing"
+              @mousemove="handleResizing"
+              @mouseleave="handleEndResizing"
+            ></div>
+          </div>
+        </template>
       </div>
       <div
         class="blink-overlay-right-resize-handler"
@@ -101,7 +166,6 @@ import {
 import { BlinkAnimFade } from '@blink-the-ui/animations';
 import { BlinkButton } from '@blink-the-ui/components';
 
-// 全局变量用于跟踪最高的z-index值
 let maxZIndex = 1000;
 
 export default defineComponent({
@@ -153,8 +217,29 @@ export default defineComponent({
         title?: Function;
         content?: Function;
         footer: Function;
+        'header-buttons'?: Function;
+        'footer-buttons'?: Function;
+        default?: Function;
       }>,
       default: () => ({}),
+    },
+    display: {
+      type: Object as PropType<{
+        header: boolean;
+        title: boolean;
+        default: boolean;
+        footer: boolean;
+        'header-buttons': boolean;
+        'footer-buttons': boolean;
+      }>,
+      default: () => ({
+        header: true,
+        title: true,
+        default: true,
+        footer: true,
+        'header-buttons': true,
+        'footer-buttons': true,
+      }),
     },
     pos_size: {
       type: Object as PropType<{
@@ -181,7 +266,7 @@ export default defineComponent({
     mined: (_id: string) => true,
     restored: (_id: string) => true,
   },
-  setup(props, { emit }) {
+  setup(props, { emit, expose }) {
     const id = ref<string>(
       props.id ||
         `blink-overlay-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`
@@ -253,7 +338,7 @@ export default defineComponent({
     };
 
     const handleResizing = (ev: MouseEvent) => {
-      if (!isResizing.value || isClosing.value) return;
+      if (!isResizing.value || isClosing.value || !props.resizable) return;
       ev.preventDefault();
       const moveX = ev.movementX;
       const moveY = ev.movementY;
@@ -262,7 +347,7 @@ export default defineComponent({
     };
 
     const handleMax = () => {
-      if (isClosing.value || isMin.value) return;
+      if (isClosing.value || isMin.value || !props.maxable) return;
       const { width, height, left, top, isLastMax } = memo.value;
       if (isLastMax) {
         isMax.value = false;
@@ -290,7 +375,7 @@ export default defineComponent({
     };
 
     const handleMin = () => {
-      if (isClosing.value) return;
+      if (isClosing.value || !props.minable) return;
       const { width, height, left, top, isLastMin } = memo.value;
       if (isLastMin) {
         isMin.value = false;
@@ -370,6 +455,12 @@ export default defineComponent({
       window.removeEventListener('resize', listenBodyResize);
       overlayWrapperRef.value?.removeEventListener('blur', listenBlur);
       overlayWrapperRef.value?.removeEventListener('mousedown', handleClick);
+    });
+
+    expose({
+      handleClose,
+      handleMin,
+      handleMax,
     });
 
     return {

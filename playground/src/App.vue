@@ -21,7 +21,11 @@ import {
   BlinkGroup as Group,
   BlinkStacked as Stacked,
 } from '@blink-the-ui/layout';
-import { BlinkOverlay, createOverlay } from '@blink-the-ui/overlays';
+import {
+  BlinkOverlay,
+  BlinkOverlayDialog,
+  createOverlay,
+} from '@blink-the-ui/overlays';
 
 import { ref } from 'vue';
 import { h } from 'vue';
@@ -60,7 +64,7 @@ const createCustomOverlay = () => {
           'Custom Header'
         ),
       title: () => h('div', { style: 'font-weight: bold;' }, 'Custom Title'),
-      content: () =>
+      default: () =>
         h('div', {}, [
           h('p', 'This is custom content'),
           h('p', 'You can put any content here'),
@@ -87,7 +91,7 @@ const createMultipleOverlays = () => {
     pos_size: { left: 100, top: 100 },
     slot: {
       title: () => h('div', {}, 'First Overlay'),
-      content: () =>
+      default: () =>
         h(
           'div',
           {},
@@ -101,7 +105,7 @@ const createMultipleOverlays = () => {
     pos_size: { left: 150, top: 150 },
     slot: {
       title: () => h('div', {}, 'Second Overlay'),
-      content: () =>
+      default: () =>
         h(
           'div',
           {},
@@ -115,7 +119,7 @@ const createMultipleOverlays = () => {
     pos_size: { left: 200, top: 200 },
     slot: {
       title: () => h('div', {}, 'Third Overlay'),
-      content: () =>
+      default: () =>
         h(
           'div',
           {},
@@ -292,6 +296,20 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
         <Button visual="primary">Confirm</Button>
       </template>
     </BlinkOverlay>
+
+    <BlinkOverlayDialog
+      title="This is an title"
+      content="Please Input"
+      type="input"
+      @confirm="(val: string) => console.log(val)"
+    />
+
+    <BlinkOverlayDialog
+      title="This is an title"
+      content="Please Input"
+      type="password"
+      @confirm="(val: string) => console.log(val)"
+    />
   </div>
 </template>
 

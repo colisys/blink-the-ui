@@ -1,4 +1,4 @@
-export type GlobalComponentSize = 'xs' | 'sm' | 'md' | 'lg';
+export * from '@blink-the-ui/theme';
 
 export type HorizontalAlignment =
   | 'start'
