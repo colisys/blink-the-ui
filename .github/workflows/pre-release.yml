@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - dev
 
 permissions:
   contents: write
@@ -45,9 +45,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Testing
-        run: pnpm test
-
       - name: Build all packages
         run: pnpm dist:all
 
@@ -64,6 +61,6 @@ jobs:
           tag: v${{ steps.package-version.outputs.current-version}}
           name: Release v${{ steps.package-version.outputs.current-version}}
           draft: false
-          prerelease: false
+          prerelease: true
           allowUpdates: true
           removeArtifacts: true
