@@ -11,7 +11,14 @@
     "format:check": "prettier --check .",
     "docs:dev": "pnpm -C docs docs:dev",
     "docs:build": "pnpm -C docs docs:build",
-    "docs:preview": "pnpm -C docs docs:preview"
+    "docs:preview": "pnpm -C docs docs:preview",
+    "dist:animations": "pnpm -C packages/animations dist",
+    "dist:components": "pnpm -C packages/components dist",
+    "dist:directives": "pnpm -C packages/directives dist",
+    "dist:icons": "pnpm -C packages/icons dist",
+    "dist:layout": "pnpm -C packages/layout dist",
+    "dist:overlays": "pnpm -C packages/overlays dist",
+    "dist:all": "pnpm dist:animations && pnpm dist:components && pnpm dist:directives && pnpm dist:icons && pnpm dist:layout && pnpm dist:overlays"
   },
   "keywords": [
     "blink-the-ui",
@@ -24,11 +31,14 @@
   "type": "commonjs",
   "license": "MIT",
   "devDependencies": {
-    "vitepress": "^1.6.4",
-    "vue": "^3.5.22",
+    "@types/node": "^24.9.1",
+    "@vue/tsconfig": "^0.8.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "vite-plugin-dts": "^4.5.4",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.22"
   },
   "lint-staged": {
     "*.{js,ts,json,md,vue}": [

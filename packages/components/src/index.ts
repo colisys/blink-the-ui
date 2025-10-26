@@ -24,12 +24,9 @@ export {
 
 export * from './types';
 import { i18n } from '@blink-the-ui/i18n';
-import Overlay from '@blink-the-ui/overlays';
 
 export default {
   install: (app: App) => {
-    import('./index.less');
-
     import('./button').then(mod =>
       app.component(mod.default.name!, mod.default)
     );
@@ -54,8 +51,6 @@ export default {
     );
     import('./form').then(mod => app.component(mod.default.name!, mod.default));
 
-    // 确保在安装 Overlay 之前安装 i18n
     app.use(i18n);
-    Overlay.install(app);
   },
 };

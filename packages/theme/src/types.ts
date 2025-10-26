@@ -1,4 +1,5 @@
 type GlobalVisual =
+  | 'default'
   | 'primary'
   | 'danger'
   | 'warning'

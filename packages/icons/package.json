@@ -2,11 +2,23 @@
   "name": "@blink-the-ui/icons",
   "version": "1.0.0",
   "description": "Icons for blink-the-ui",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build",
+    "clean": "rm -rf dist && mkdir dist",
+    "dist": "pnpm clean && pnpm build"
   },
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "blink-the-ui",
     "vue3",

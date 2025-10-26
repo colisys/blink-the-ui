@@ -29,7 +29,7 @@
 <script lang="ts">
 import { defineComponent, ref, watch, onMounted, type PropType } from 'vue';
 import { BlinkAnimFade } from '@blink-the-ui/animations';
-import type { GlobalVisual, GlobalComponentSize } from '..';
+import type { GlobalVisual, GlobalComponentSize } from '@blink-the-ui/theme';
 
 export default defineComponent({
   name: 'BlinkAlert',

@@ -7,6 +7,9 @@
     "jsxImportSource": "vue",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
 
     /* Linting */
     "strict": true,
@@ -16,5 +19,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.svg"]
 }

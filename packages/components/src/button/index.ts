@@ -1,12 +1,11 @@
 import BlinkButton from './index.vue';
 
-type ButtonVisual = 'default' | 'primary' | 'danger' | 'warning' | 'success';
+import { type GlobalVisual } from '@blink-the-ui/theme';
 type ButtonOutline = 'solid' | 'ghost';
 
 export {
   BlinkButton,
   type ButtonOutline as BlinkButtonOutline,
-  type ButtonVisual as BlinkButtonType,
-  type ButtonVisual as BlinkButtonVisual,
+  type GlobalVisual as BlinkButtonVisual,
 };
 export default BlinkButton;

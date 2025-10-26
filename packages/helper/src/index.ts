@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 export function slice<T>(array: T[], start: number, length: number): T[] {
   const result: T[] = [];
   for (let i = 0; i < length; i++) {

@@ -44,7 +44,6 @@ const BlinkOverlayDialog = defineComponent({
     const inputValue = ref<string>('');
 
     const btnCancel = h(
-      // @ts-ignore
       BlinkButton,
       {
         type: 'button',
@@ -59,7 +58,6 @@ const BlinkOverlayDialog = defineComponent({
       }
     );
     const btnConfirm = h(
-      // @ts-ignore
       BlinkButton,
       {
         type: 'button',

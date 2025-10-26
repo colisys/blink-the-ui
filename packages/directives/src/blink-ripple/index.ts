@@ -1,5 +1,4 @@
 import type { DirectiveBinding, ObjectDirective, VNode } from 'vue';
-import './index.less';
 
 type RippleDirectiveOptions = {
   color?: string;

@@ -70,7 +70,20 @@ import type { GlobalComponentSize } from '../types';
 import type { BlinkInputPasswordCheckingTrigger } from '.';
 import { useI18n } from 'vue-i18n';
 
-export default defineComponent({
+export default defineComponent<{
+  name?: string;
+  password?: boolean;
+  placeholder?: string;
+  value?: string;
+  disabled?: boolean;
+  size?: GlobalComponentSize;
+  clearable?: boolean;
+  maxLength?: number | undefined;
+  type?: InputTypeHTMLAttribute;
+  passwordPeakingTrigger?: BlinkInputPasswordCheckingTrigger;
+  passwordHiddenIcon?: string;
+  passwordShownIcon?: string;
+}>({
   name: 'BlinkInput',
   props: {
     name: {
@@ -122,7 +135,14 @@ export default defineComponent({
       default: '🔒',
     },
   },
-  emits: ['input', 'change', 'clear', 'focus', 'blur', 'update:modelValue'],
+  emits: [
+    'input',
+    'change',
+    'clear',
+    'focus',
+    'blur',
+    'update:modelValue',
+  ] as const,
   setup(props, { emit }) {
     const { t } = useI18n();
     const password = ref<boolean>(false);
@@ -137,15 +157,15 @@ export default defineComponent({
       ref<BlinkInputPasswordCheckingTrigger>('hold');
     const inputRef = ref<HTMLElement | null>(null);
 
-    password.value = props.password;
+    password.value = props.password ?? false;
     placeholder.value = props.placeholder || t('components.input.placeholder');
-    value.value = props.value;
-    disabled.value = props.disabled;
-    size.value = props.size;
-    clearable.value = props.clearable;
+    value.value = props.value ?? '';
+    disabled.value = props.disabled ?? false;
+    size.value = props.size ?? 'md';
+    clearable.value = props.clearable ?? true;
     maxLength.value = props.maxLength;
-    type.value = props.type;
-    passwordPeakingTrigger.value = props.passwordPeakingTrigger;
+    type.value = props.type ?? 'button';
+    passwordPeakingTrigger.value = props.passwordPeakingTrigger ?? 'hold';
 
     const memo = { password: password.value, type: type.value };
 
@@ -161,47 +181,47 @@ export default defineComponent({
 
     watch(
       () => props.password,
-      val => (password.value = val)
+      val => (password.value = val ?? false)
     );
 
     watch(
       () => props.placeholder,
-      val => (placeholder.value = val)
+      val => (placeholder.value = val || t('components.input.placeholder'))
     );
 
     watch(
       () => props.value,
-      val => (value.value = val)
+      val => (value.value = val ?? '')
     );
 
     watch(
       () => props.disabled,
-      val => (disabled.value = val)
+      val => (disabled.value = val ?? false)
     );
 
     watch(
       () => props.size,
-      val => (size.value = val)
+      val => (size.value = val ?? 'md')
     );
 
     watch(
       () => props.clearable,
-      val => (clearable.value = val)
+      val => (clearable.value = val ?? true)
     );
 
     watch(
       () => props.maxLength,
-      val => (maxLength.value = val)
+      val => (maxLength.value = val ?? undefined)
     );
 
     watch(
       () => props.type,
-      val => (type.value = val)
+      val => (type.value = val ?? 'text')
     );
 
     watch(
       () => props.passwordPeakingTrigger,
-      val => (passwordPeakingTrigger.value = val)
+      val => (passwordPeakingTrigger.value = val ?? 'hold')
     );
 
     const handleInput = (e: Event) => {
