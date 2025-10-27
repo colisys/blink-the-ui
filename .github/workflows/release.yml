@@ -51,6 +51,18 @@ jobs:
       - name: Build all packages
         run: pnpm dist:all
 
+      - name: Organize artifacts by package
+        run: |
+          mkdir -p artifacts
+          for dir in packages/*/; do
+            pkg_name=$(basename "$dir")
+            if [ -d "${dir}dist" ]; then
+              mkdir -p "artifacts/${pkg_name}"
+              cp -r "${dir}dist/" "artifacts/${pkg_name}/"
+            fi
+          done
+          tar -czvf blink-the-ui-artifacts.tar.gz -C artifacts .
+
       - name: Get version from package.json
         id: package-version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
@@ -60,7 +72,7 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "packages/*/dist/**"
+          artifacts: "blink-the-ui-artifacts.tar.gz"
           tag: v${{ steps.package-version.outputs.current-version}}
           name: Release v${{ steps.package-version.outputs.current-version}}
           draft: false
