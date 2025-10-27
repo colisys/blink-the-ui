@@ -18,11 +18,9 @@
   "types": "./dist/components/src/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/components/src/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
-    },
-    "./style.css": "./dist/style.css"
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
+    }
   },
   "files": [
     "dist"
@@ -31,6 +29,7 @@
     "@blink-the-ui/animations": "workspace:animations",
     "@blink-the-ui/directives": "workspace:directives",
     "@blink-the-ui/i18n": "workspace:i18n",
+    "@blink-the-ui/helper": "workspace:helper",
     "@blink-the-ui/overlays": "workspace:overlays",
     "@blink-the-ui/layout": "workspace:layout",
     "@blink-the-ui/theme": "workspace:theme",

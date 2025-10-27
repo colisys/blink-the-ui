@@ -144,7 +144,17 @@ export default defineComponent<{
     'update:modelValue',
   ] as const,
   setup(props, { emit }) {
-    const { t } = useI18n();
+    let t: ReturnType<typeof useI18n>['t'];
+    try {
+      const i18n = useI18n();
+      t = i18n.t;
+    } catch (e) {
+      t = (key: string) => key;
+      console.warn(
+        'i18n not available in BlinkInput component, using default implementation'
+      );
+    }
+
     const password = ref<boolean>(false);
     const placeholder = ref<String>('');
     const value = ref<String>('');

@@ -29,7 +29,7 @@ import {
 
 import { ref } from 'vue';
 import { h } from 'vue';
-import { BlinkProgressController } from '@blink-the-ui/components/src/progress';
+import { BlinkProgressController } from '@blink-the-ui/components/progress';
 
 const times = ref(0);
 

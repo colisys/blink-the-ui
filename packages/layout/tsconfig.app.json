@@ -10,6 +10,9 @@
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": false,
+    "paths": {
+      "@": ["./src"]
+    },
 
     /* Linting */
     "strict": true,

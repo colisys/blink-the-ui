@@ -44,5 +44,10 @@
     "*.{js,ts,json,md,vue}": [
       "prettier --write --log-level=silent"
     ]
+  },
+  "pnpm": {
+    "overrides": {
+      "@vue/language-core": "npm:@colisys/language-core@patch.1"
+    }
   }
 }

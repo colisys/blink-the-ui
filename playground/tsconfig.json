@@ -13,6 +13,10 @@
     "isolatedModules": true,
     "noEmit": true,
 
+    "paths": {
+      "@blink-the-ui/components/*": ["../packages/components/src/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

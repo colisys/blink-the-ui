@@ -11,6 +11,9 @@
     "declarationMap": true,
     "emitDeclarationOnly": false,
     "outDir": "./dist",
+    "paths": {
+      "@": ["./src"]
+    },
 
     /* Linting */
     "strict": true,

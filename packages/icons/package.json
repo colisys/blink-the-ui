@@ -8,8 +8,8 @@
     "clean": "rm -rf dist && mkdir dist",
     "dist": "pnpm clean && pnpm build"
   },
-  "main": "./src/index.ts",
-  "module": "./src/index.ts",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
       "import": "./src/index.ts",

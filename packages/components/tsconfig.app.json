@@ -16,7 +16,8 @@
     "outDir": "./dist",
     "pretty": false,
     "paths": {
-      "@blink-the-ui/overlays": ["../overlays/src"]
+      "@blink-the-ui/overlays": ["../overlays/src"],
+      "@": ["./src"]
     },
 
     /* Linting */
@@ -27,10 +28,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "src/shims-components.d.ts"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.d.ts"]
 }

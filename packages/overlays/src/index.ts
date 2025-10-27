@@ -2,8 +2,10 @@ import { createVNode, render, type App, type VNode } from 'vue';
 import BlinkOverlay from './overlay';
 import BlinkOverlayDialog from './dialog';
 import './index.less';
-
-let installedApp: App | null = null;
+import {
+  setApplicationContext,
+  useApplicationContext,
+} from '@blink-the-ui/helper';
 
 interface OverlayInstance {
   vnode: VNode;
@@ -58,7 +60,7 @@ const createOverlay = (
     header: () => options?.slot?.header,
     title: options?.slot?.title,
     default: options?.slot?.default,
-    footer: options?.slot?.footer,
+    footer: () => options?.slot?.footer,
     'header-buttons': options?.slot?.['header-buttons'],
     'footer-buttons': options?.slot?.['footer-buttons'],
   };
@@ -80,14 +82,8 @@ const createOverlay = (
     slots
   );
 
-  if (installedApp && doRender) {
-    vnode.appContext = installedApp._context;
-  }
-
-  if (doRender) {
-    render(vnode, container);
-    document.body.appendChild(container);
-  }
+  vnode.appContext = useApplicationContext();
+  doRender && document.body.appendChild(container) && render(vnode, container);
 
   const destroy = () => {
     render(null, container);
@@ -107,7 +103,8 @@ export { BlinkOverlay, BlinkOverlayDialog, createOverlay };
 
 export default {
   install: (app: App) => {
-    installedApp = app;
+    setApplicationContext(app._context);
+
     import('./overlay').then(mod =>
       app.component(mod.default.name!, mod.default)
     );

@@ -5,6 +5,7 @@ import zh from './locales/zh/common.json';
 
 import en_datetime from './locales/en/datetime.json';
 import zh_datetime from './locales/zh/datetime.json';
+import type { App } from 'vue';
 
 export type SupportedLocale = 'en' | 'zh';
 export type LocaleMessages = typeof en;
@@ -29,4 +30,9 @@ export const i18n = createI18n({
 
 export type I18nInstance = typeof i18n;
 export type { Composer };
-export default i18n;
+export default {
+  i18n,
+  install: (app: App) => {
+    i18n.install(app);
+  },
+};

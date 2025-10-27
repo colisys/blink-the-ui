@@ -16,6 +16,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@blink-the-ui/components': resolve(__dirname, '../components/src'),
+      '@': resolve(__dirname, 'src'),
     },
   },
   build: {

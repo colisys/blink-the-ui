@@ -13,7 +13,8 @@
     "skipLibCheck": true,
     "outDir": "./dist",
     "paths": {
-      "@blink-the-ui/components": ["../components/src"]
+      "@blink-the-ui/components": ["../components/src"],
+      "@/*": ["./src/*"]
     },
 
     /* Linting */
@@ -24,10 +25,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "src/shims-components.d.ts"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.d.ts"]
 }

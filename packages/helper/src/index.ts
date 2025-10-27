@@ -1,5 +1,7 @@
 // @ts-nocheck
 
+import { getCurrentInstance, type AppContext } from 'vue';
+
 export function slice<T>(array: T[], start: number, length: number): T[] {
   const result: T[] = [];
   for (let i = 0; i < length; i++) {
@@ -39,6 +41,18 @@ export function getColor(color: string, def: string = 'rgba(0, 0, 0, 0.1)') {
     default:
       return def;
   }
+}
+
+let appContext: AppContext | undefined = undefined;
+export function useApplicationContext() {
+  if (appContext) return appContext;
+  const instance = getCurrentInstance();
+  appContext = instance.appContext;
+  return appContext;
+}
+
+export function setApplicationContext(context: AppContext) {
+  appContext = context;
 }
 
 export { FormBuilder } from './builder/form';

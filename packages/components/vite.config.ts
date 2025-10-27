@@ -17,6 +17,7 @@ export default defineConfig({
     alias: {
       '@blink-the-ui/overlays': resolve(__dirname, '../overlays/src'),
       '@blink-the-ui/i18n': resolve(__dirname, '../i18n/src'),
+      '@': resolve(__dirname, 'src'),
     },
   },
   build: {
@@ -31,6 +32,7 @@ export default defineConfig({
       output: {
         globals: {
           vue: 'Vue',
+          '@blink-the-ui/i18n': 'BlinkTheUIi18n',
         },
       },
     },
