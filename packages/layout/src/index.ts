@@ -1,10 +1,21 @@
 import { type App } from 'vue';
 
-export * from './col';
-export * from './row';
-export * from './group';
-export * from './grid';
-export * from './stacked';
+import BlinkLayoutCol from './col';
+import BlinkLayoutRow from './row';
+import BlinkLayoutGroup from './group';
+import BlinkLayoutGrid from './grid';
+import BlinkLayoutStacked from './stacked';
+import BlinkLayoutList from './list';
+
+export {
+  BlinkLayoutCol,
+  BlinkLayoutRow,
+  BlinkLayoutGroup,
+  BlinkLayoutGrid,
+  BlinkLayoutStacked,
+  BlinkLayoutList,
+};
+
 export * from './types';
 
 export default {
@@ -18,5 +29,6 @@ export default {
     import('./stacked').then(mod =>
       app.component(mod.default.name!, mod.default)
     );
+    import('./list').then(mod => app.component(mod.default.name!, mod.default));
   },
 };

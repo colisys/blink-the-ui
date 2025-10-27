@@ -1,4 +1,4 @@
-import BlinkCol from './index.vue';
+import BlinkLayoutCol from './index.vue';
 
-export { BlinkCol };
-export default BlinkCol;
+export { BlinkLayoutCol };
+export default BlinkLayoutCol;

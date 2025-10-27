@@ -22,7 +22,7 @@
 import { defineComponent, type PropType } from 'vue';
 
 export default defineComponent({
-  name: 'BlinkStacked',
+  name: 'BlinkLayoutStacked',
   props: {
     gap: {
       type: String,

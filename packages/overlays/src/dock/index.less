@@ -1,0 +1,87 @@
+@import '../index.less';
+
+@dock-class-name: ~'blink-overlay-dock';
+
+.@{dock-class-name} {
+  padding: 6px;
+  transition: all 0.3s ease-in-out;
+
+  &-wrapper {
+    position: fixed;
+    display: flex;
+  }
+
+  &--position {
+    &-top {
+      top: 0;
+
+      .@{dock-class-name} {
+        border-bottom-left-radius: calc(var(--global-border-radius) * 2);
+        border-bottom-right-radius: calc(var(--global-border-radius) * 2);
+      }
+    }
+
+    &-bottom {
+      bottom: 0;
+
+      .@{dock-class-name} {
+        border-top-left-radius: calc(var(--global-border-radius) * 2);
+        border-top-right-radius: calc(var(--global-border-radius) * 2);
+      }
+    }
+
+    &-left {
+      left: 0;
+
+      .@{dock-class-name} {
+        border-bottom-right-radius: calc(var(--global-border-radius) * 2);
+        border-bottom-right-radius: calc(var(--global-border-radius) * 2);
+      }
+    }
+
+    &-right {
+      right: 0;
+
+      .@{dock-class-name} {
+        border-bottom-left-radius: calc(var(--global-border-radius) * 2);
+        border-bottom-left-radius: calc(var(--global-border-radius) * 2);
+      }
+    }
+  }
+}
+
+.@{dock-class-name}--position-top,
+.@{dock-class-name}--position-bottom {
+  &.@{dock-class-name}--align {
+    &-start {
+      left: 0;
+    }
+
+    &-center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &-end {
+      right: 0;
+    }
+  }
+}
+
+.@{dock-class-name}--position-left,
+.@{dock-class-name}--position-right {
+  &.@{dock-class-name}--align {
+    &-start {
+      top: 0;
+    }
+
+    &-center {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &-end {
+      bottom: 0;
+    }
+  }
+}

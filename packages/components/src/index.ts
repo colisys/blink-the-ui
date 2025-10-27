@@ -9,6 +9,7 @@ import { BlinkInput } from './input';
 import { BlinkProgress } from './progress';
 import { BlinkCheckbox } from './checkbox';
 import { BlinkForm } from './form';
+import { BlinkUpload } from './upload';
 
 export {
   BlinkButton,
@@ -20,6 +21,7 @@ export {
   BlinkProgress,
   BlinkCheckbox,
   BlinkForm,
+  BlinkUpload,
 };
 
 export * from './types';

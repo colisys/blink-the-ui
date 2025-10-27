@@ -1,13 +1,12 @@
 [ ] Component
     [x] - Alert
-    [ ] - Avatar
+    [x] - Avatar
     [x] - Button
     [ ] - Checkbox
-    [ ] - Form
+    [x] - Form
     [x] - Input
     [x] - Label
     [x] - Progress
-    [ ] - Row
     [ ] - Select
     [x] - Switch
     [x] - Text
@@ -39,14 +38,15 @@
     ...
 
 [ ] Overlays
-    [ ] - Dialog
+    [x] - Dialog
     [ ] - Dropdown
     [ ] - Modal
-    [ ] - Overlay
+    [x] - Overlay
     [ ] - Popup
     [ ] - Tooltip
     [ ] - Loading
     [ ] - Toast
+    [x] - Dock
     ...
 
 [ ] Layouts

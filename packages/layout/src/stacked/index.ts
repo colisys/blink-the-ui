@@ -1,4 +1,4 @@
-import BlinkStacked from './index.vue';
+import BlinkLayoutStacked from './index.vue';
 
-export { BlinkStacked };
-export default BlinkStacked;
+export { BlinkLayoutStacked };
+export default BlinkLayoutStacked;

@@ -1,4 +1,4 @@
-import BlinkGrid from './index.vue';
+import BlinkLayoutGrid from './index.vue';
 
-export { BlinkGrid };
-export default BlinkGrid;
+export { BlinkLayoutGrid };
+export default BlinkLayoutGrid;

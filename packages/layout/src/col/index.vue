@@ -15,7 +15,7 @@ import { type GlobalComponentSize, type ColSizeDescriptor } from '../types';
 type ColSize = number | ColSizeDescriptor;
 
 export default defineComponent({
-  name: 'BlinkCol',
+  name: 'BlinkLayoutCol',
   props: {
     xs: {
       type: [Number, Object] as PropType<ColSize>,

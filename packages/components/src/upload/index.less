@@ -1,0 +1,22 @@
+@import '../index.less';
+
+@upload-class-name: ~'blink-upload';
+
+.@{upload-class-name} {
+  &-wrapper {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-buttons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &-input {
+    display: none;
+  }
+}

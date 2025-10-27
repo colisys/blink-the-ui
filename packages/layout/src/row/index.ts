@@ -1,4 +1,4 @@
-import BlinkRow from './index.vue';
+import BlinkLayoutRow from './index.vue';
 
-export { BlinkRow };
-export default BlinkRow;
+export { BlinkLayoutRow };
+export default BlinkLayoutRow;

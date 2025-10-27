@@ -1,5 +1,9 @@
 <template>
-  <div class="blink-layout-container"><slot></slot></div>
+  <div class="blink-layout-list-wrapper">
+    <div class="blink-layout-list-container">
+      <slot></slot>
+    </div>
+  </div>
 </template>
 
 <style lang="less" scoped>
@@ -10,8 +14,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'BlinkLayoutContainer',
-  props: {},
+  name: 'BlinkLayoutList',
   setup() {
     return {};
   },

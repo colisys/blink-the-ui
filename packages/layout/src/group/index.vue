@@ -58,7 +58,7 @@ export type GroupAlign =
   | 'flex-start';
 
 export default defineComponent({
-  name: 'BlinkGroup',
+  name: 'BlinkLayoutGroup',
   props: {
     title: {
       type: String,

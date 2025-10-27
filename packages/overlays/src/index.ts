@@ -1,6 +1,8 @@
 import { createVNode, render, type App, type VNode } from 'vue';
 import BlinkOverlay from './overlay';
 import BlinkOverlayDialog from './dialog';
+import BlinkOverlayDock from './dock';
+
 import './index.less';
 import {
   setApplicationContext,
@@ -65,7 +67,6 @@ const createOverlay = (
     'footer-buttons': options?.slot?.['footer-buttons'],
   };
 
-  // 使用应用上下文创建 VNode
   const vnode = createVNode(
     BlinkOverlay,
     {
@@ -99,7 +100,7 @@ const createOverlay = (
   };
 };
 
-export { BlinkOverlay, BlinkOverlayDialog, createOverlay };
+export { BlinkOverlay, BlinkOverlayDialog, BlinkOverlayDock, createOverlay };
 
 export default {
   install: (app: App) => {
@@ -111,5 +112,6 @@ export default {
     import('./dialog').then(mod =>
       app.component(mod.default.name!, mod.default)
     );
+    import('./dock').then(mod => app.component(mod.default.name!, mod.default));
   },
 };

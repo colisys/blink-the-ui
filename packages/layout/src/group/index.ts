@@ -1,4 +1,4 @@
-import BlinkGroup from './index.vue';
+import BlinkLayoutGroup from './index.vue';
 
-export default BlinkGroup;
-export { BlinkGroup };
+export { BlinkLayoutGroup };
+export default BlinkLayoutGroup;

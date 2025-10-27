@@ -26,7 +26,7 @@ import {
 } from '../types';
 
 export default defineComponent({
-  name: 'BlinkGrid',
+  name: 'BlinkLayoutGrid',
   props: {
     cols: {
       type: Number,

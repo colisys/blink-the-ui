@@ -10,21 +10,25 @@ import {
   GlobalVisual,
   BlinkCheckbox,
   BlinkForm,
+  BlinkUpload,
 } from '@blink-the-ui/components';
 
 import {
   BlinkAnimFade,
+  BlinkAnimHoverFloatUp,
   BlinkAnimRipple,
   BlinkAnimStacked,
 } from '@blink-the-ui/animations';
 
 import {
-  BlinkGroup as Group,
-  BlinkStacked as Stacked,
+  BlinkLayoutGroup as Group,
+  BlinkLayoutStacked as Stacked,
 } from '@blink-the-ui/layout';
+
 import {
   BlinkOverlay,
   BlinkOverlayDialog,
+  BlinkOverlayDock,
   createOverlay,
 } from '@blink-the-ui/overlays';
 
@@ -144,7 +148,7 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
 </script>
 
 <template>
-  <div id="app">
+  <div>
     <h1>Blink UI Playground</h1>
 
     <Group direction="vertical" alignment="center" gap="8px">
@@ -244,6 +248,7 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
       <Group fill>
         <BlinkInput name="username" value="123123"></BlinkInput>
         <BlinkInput name="password" password value="123123"></BlinkInput>
+        <BlinkUpload></BlinkUpload>
       </Group>
 
       <!-- 添加创建多个overlay的按钮 -->
@@ -282,8 +287,6 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
 
       <Group justify="center" fill>
         <BlinkCheckbox></BlinkCheckbox>
-        <BlinkCheckIcon></BlinkCheckIcon>
-        <BlinkTestIcon></BlinkTestIcon>
       </Group>
     </Group>
 
@@ -332,6 +335,23 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
       <BlinkInput name="password" password value="123123"></BlinkInput>
       <Button type="submit">Submit</Button>
     </BlinkForm>
+    <BlinkOverlayDock
+      position="right"
+      alignment="center"
+      background="transparent"
+    >
+      <BlinkAnimHoverFloatUp
+        side="left"
+        shadow="right"
+        style="display: flex; flex-direction: column; gap: 8px"
+      >
+        <Button>123123</Button>
+        <Button>123123</Button>
+        <Button>123123</Button>
+        <Button>123123</Button>
+        <Button>123123</Button>
+      </BlinkAnimHoverFloatUp>
+    </BlinkOverlayDock>
   </div>
 </template>
 

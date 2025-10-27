@@ -20,7 +20,7 @@ import { defineComponent, type PropType } from 'vue';
 import { type HorizontalAlignment, type VerticalAlignment } from '../types';
 
 export default defineComponent({
-  name: 'BlinkRow',
+  name: 'BlinkLayoutRow',
   props: {
     justify: {
       type: String as PropType<HorizontalAlignment>,
