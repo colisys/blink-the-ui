@@ -14,8 +14,85 @@
   </Transition>
 </template>
 
-<style lang="less">
-@import './fade.less';
+<style lang="less" scoped>
+@transition-override: all 0.3s ease!important;
+
+.simple-fade {
+  &-enter-active,
+  &-leave-active,
+  &-move {
+    transition: @transition-override;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+  }
+}
+
+.scale-fade {
+  &-enter-active,
+  &-leave-active,
+  &-move {
+    transition: @transition-override;
+  }
+
+  &-enter-from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  &-leave-to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.scale-reverse-fade {
+  &-enter-active,
+  &-leave-active,
+  &-move {
+    transition: @transition-override;
+  }
+
+  &-enter-from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  &-leave-to {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+.slide-fade {
+  &-enter-active,
+  &-leave-active,
+  &-move {
+    transition: @transition-override;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+.slide-reverse-fade {
+  &-enter-active,
+  &-leave-active,
+  &-move {
+    transition: @transition-override;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
 </style>
 
 <script lang="ts">

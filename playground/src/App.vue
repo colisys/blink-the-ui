@@ -9,6 +9,7 @@ import {
   BlinkProgress,
   GlobalVisual,
   BlinkCheckbox,
+  BlinkForm,
 } from '@blink-the-ui/components';
 
 import {
@@ -310,6 +311,27 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
       type="password"
       @confirm="(val: string) => console.log(val)"
     />
+
+    <BlinkForm
+      @validate-failed="
+        errs => {
+          for (const err of errs) {
+            console.error(err.message);
+          }
+        }
+      "
+    >
+      <BlinkInput
+        :validateRule="{
+          type: 'string',
+          validator: (_rule, val) => val === '123123',
+        }"
+        name="username"
+        value="123123"
+      ></BlinkInput>
+      <BlinkInput name="password" password value="123123"></BlinkInput>
+      <Button type="submit">Submit</Button>
+    </BlinkForm>
   </div>
 </template>
 

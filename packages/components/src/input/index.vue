@@ -65,10 +65,15 @@ import {
   watch,
   type PropType,
   computed,
+  inject,
+  type Ref,
+  onMounted,
 } from 'vue';
 import type { GlobalComponentSize } from '../types';
 import type { BlinkInputPasswordCheckingTrigger } from '.';
 import { useI18n } from 'vue-i18n';
+import { BlinkFormContainerSymbol, type BlinkFormItems } from '../form';
+import type { RuleItem } from 'async-validator';
 
 export default defineComponent<{
   name?: string;
@@ -83,6 +88,7 @@ export default defineComponent<{
   passwordPeakingTrigger?: BlinkInputPasswordCheckingTrigger;
   passwordHiddenIcon?: string;
   passwordShownIcon?: string;
+  validateRule?: RuleItem;
 }>({
   name: 'BlinkInput',
   props: {
@@ -133,6 +139,10 @@ export default defineComponent<{
     passwordShownIcon: {
       type: String,
       default: '🔒',
+    },
+    validateRule: {
+      type: Object as PropType<RuleItem>,
+      default: () => ({}),
     },
   },
   emits: [
@@ -297,6 +307,17 @@ export default defineComponent<{
           break;
       }
     };
+
+    onMounted(() => {
+      if (props.name)
+        (
+          inject(BlinkFormContainerSymbol, ref([])) as Ref<BlinkFormItems>
+        )?.value?.push({
+          name: props.name,
+          value: () => value.value,
+          validate: props.validateRule,
+        });
+    });
 
     return {
       inputRef,

@@ -1,14 +1,26 @@
 import type { App } from 'vue';
 import './index.less';
-export * from './button';
-export * from './switch';
-export * from './text';
-export * from './label';
-export * from './alert';
-export * from './input';
-export * from './progress';
-export * from './checkbox';
-export * from './form';
+import { BlinkButton } from './button';
+import { BlinkSwitch } from './switch';
+import { BlinkText } from './text';
+import { BlinkLabel } from './label';
+import { BlinkAlert } from './alert';
+import { BlinkInput } from './input';
+import { BlinkProgress } from './progress';
+import { BlinkCheckbox } from './checkbox';
+import { BlinkForm } from './form';
+
+export {
+  BlinkButton,
+  BlinkSwitch,
+  BlinkText,
+  BlinkLabel,
+  BlinkAlert,
+  BlinkInput,
+  BlinkProgress,
+  BlinkCheckbox,
+  BlinkForm,
+};
 
 export * from './types';
 import { i18n } from '@blink-the-ui/i18n';

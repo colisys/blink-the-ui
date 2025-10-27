@@ -12,7 +12,7 @@
     @click="handleClick"
     @dblclick="handleDblClick"
     @contextmenu="handleContextMenu"
-    type="button"
+    :type="type"
     v-bind="$attrs"
   >
     <slot name="prefix"></slot>
