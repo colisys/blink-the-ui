@@ -6,6 +6,7 @@ import BlinkLayoutGroup from './group';
 import BlinkLayoutGrid from './grid';
 import BlinkLayoutStacked from './stacked';
 import BlinkLayoutList from './list';
+import BlinkLayoutContainer from './container';
 
 export {
   BlinkLayoutCol,
@@ -14,6 +15,7 @@ export {
   BlinkLayoutGrid,
   BlinkLayoutStacked,
   BlinkLayoutList,
+  BlinkLayoutContainer,
 };
 
 export * from './types';
@@ -30,5 +32,8 @@ export default {
       app.component(mod.default.name!, mod.default)
     );
     import('./list').then(mod => app.component(mod.default.name!, mod.default));
+    import('./container').then(mod =>
+      app.component(mod.default.name!, mod.default)
+    );
   },
 };

@@ -2,6 +2,7 @@ import { createVNode, render, type App, type VNode } from 'vue';
 import BlinkOverlay from './overlay';
 import BlinkOverlayDialog from './dialog';
 import BlinkOverlayDock from './dock';
+import BlinkOverlayPopup from './popup';
 
 import './index.less';
 import {
@@ -59,10 +60,10 @@ const createOverlay = (
   const interceptOnClose = options?.listener?.onClose;
   const container = document.createElement('div');
   const slots = {
-    header: () => options?.slot?.header,
+    header: options?.slot?.header,
     title: options?.slot?.title,
     default: options?.slot?.default,
-    footer: () => options?.slot?.footer,
+    footer: options?.slot?.footer,
     'header-buttons': options?.slot?.['header-buttons'],
     'footer-buttons': options?.slot?.['footer-buttons'],
   };
@@ -100,7 +101,13 @@ const createOverlay = (
   };
 };
 
-export { BlinkOverlay, BlinkOverlayDialog, BlinkOverlayDock, createOverlay };
+export {
+  BlinkOverlay,
+  BlinkOverlayDialog,
+  BlinkOverlayDock,
+  BlinkOverlayPopup,
+  createOverlay,
+};
 
 export default {
   install: (app: App) => {
@@ -113,5 +120,8 @@ export default {
       app.component(mod.default.name!, mod.default)
     );
     import('./dock').then(mod => app.component(mod.default.name!, mod.default));
+    import('./popup').then(mod =>
+      app.component(mod.default.name!, mod.default)
+    );
   },
 };

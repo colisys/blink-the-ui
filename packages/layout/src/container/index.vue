@@ -1,5 +1,7 @@
 <template>
-  <div class="blink-layout-container"><slot></slot></div>
+  <div class="blink-layout-container">
+    <slot></slot>
+  </div>
 </template>
 
 <style lang="less" scoped>

@@ -29,6 +29,7 @@ import {
   BlinkOverlay,
   BlinkOverlayDialog,
   BlinkOverlayDock,
+  BlinkOverlayPopup,
   createOverlay,
 } from '@blink-the-ui/overlays';
 
@@ -340,17 +341,18 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
       alignment="center"
       background="transparent"
     >
-      <BlinkAnimHoverFloatUp
-        side="left"
-        shadow="right"
-        style="display: flex; flex-direction: column; gap: 8px"
-      >
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <BlinkOverlayPopup content="123123123">
+          <BlinkAnimHoverFloatUp side="left" shadow="right">
+            <Button> 123123123 </Button>
+          </BlinkAnimHoverFloatUp>
+        </BlinkOverlayPopup>
+
         <Button>123123</Button>
         <Button>123123</Button>
         <Button>123123</Button>
         <Button>123123</Button>
-        <Button>123123</Button>
-      </BlinkAnimHoverFloatUp>
+      </div>
     </BlinkOverlayDock>
   </div>
 </template>
