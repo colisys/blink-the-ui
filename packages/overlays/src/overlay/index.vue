@@ -247,6 +247,8 @@ export default defineComponent({
         height?: number;
         left?: number;
         top?: number;
+        right?: number;
+        bottom?: number;
       }>,
       default: () => ({}),
     },
@@ -296,12 +298,15 @@ export default defineComponent({
     }>({
       isLastMax: false,
       isLastMin: false,
-      left: 0,
-      top: 0,
+      left: props.pos_size?.left ?? 0,
+      top: props.pos_size?.top ?? 0,
       width: bodyClientWidth.value,
       height: bodyClientHeight.value,
     });
     const isMoving = ref<boolean>(false);
+
+    if (props.pos_size.right && props.pos_size.width)
+      props.pos_size.left = bodyClientWidth.value - props.pos_size.width;
 
     const handleStartMoving = () => {
       if (isMax.value) return;
@@ -317,6 +322,7 @@ export default defineComponent({
 
     const handleMoving = (ev: MouseEvent) => {
       if (!isMoving.value || isClosing.value) return;
+      ev.stopImmediatePropagation();
       ev.preventDefault();
       const moveX = ev.movementX;
       const moveY = ev.movementY;
@@ -328,7 +334,6 @@ export default defineComponent({
     const handleStartResizing = () => {
       if (isMax.value || isMin.value || isClosing.value) return;
       isResizing.value = true;
-      // 当开始调整大小时，将当前overlay置于最前
       currentZIndex.value = ++maxZIndex;
     };
 
@@ -435,10 +440,8 @@ export default defineComponent({
       setTimeout(() => (visible.value = true));
       overlayWrapperRef.value?.addEventListener('blur', listenBlur);
       overlayWrapperRef.value?.addEventListener('mouseout', listenBlur);
-      // 添加点击事件监听器，用于将overlay置于最前
       overlayWrapperRef.value?.addEventListener('mousedown', handleClick);
 
-      // 给overlayWrapperRef设置初始创建时的宽高和位置
       setTimeout(() => {
         overlayWrapperRef.value!.style.width =
           overlayWrapperRef.value!.clientWidth + 'px';

@@ -21,6 +21,8 @@ import {
 } from '@blink-the-ui/animations';
 
 import {
+  BlinkLayoutCol,
+  BlinkLayoutRow,
   BlinkLayoutGroup as Group,
   BlinkLayoutStacked as Stacked,
 } from '@blink-the-ui/layout';
@@ -289,6 +291,20 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
       <Group justify="center" fill>
         <BlinkCheckbox></BlinkCheckbox>
       </Group>
+
+      <Group fill>
+        <BlinkLayoutRow style="gap: 8px">
+          <BlinkOverlayPopup content="123123123" :margin="10">
+            <Button>123123123</Button>
+          </BlinkOverlayPopup>
+          <BlinkOverlayPopup content="123123123" position="bottom">
+            <Button>123123123</Button>
+          </BlinkOverlayPopup>
+          <BlinkOverlayPopup content="123123123" position="left">
+            <Button>123123123</Button>
+          </BlinkOverlayPopup>
+        </BlinkLayoutRow>
+      </Group>
     </Group>
 
     <div v-blink-datetime>2025/10/19 00:00:00</div>
@@ -342,12 +358,6 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
       background="transparent"
     >
       <div style="display: flex; flex-direction: column; gap: 8px">
-        <BlinkOverlayPopup content="123123123">
-          <BlinkAnimHoverFloatUp side="left" shadow="right">
-            <Button> 123123123 </Button>
-          </BlinkAnimHoverFloatUp>
-        </BlinkOverlayPopup>
-
         <Button>123123</Button>
         <Button>123123</Button>
         <Button>123123</Button>

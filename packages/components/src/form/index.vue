@@ -43,8 +43,6 @@ export default defineComponent({
 
       const validator = new Schema(schema as Rules);
 
-      console.log(data, validator);
-
       validator.validate(data, (errors: ValidateError[] | null) => {
         !errors && emit('submit', data);
         errors && emit('validateFailed', errors);

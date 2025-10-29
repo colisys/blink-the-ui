@@ -44,6 +44,8 @@ export type OverlayOptions = {
     height?: number;
     left?: number;
     top?: number;
+    right?: number;
+    bottom?: number;
   };
   listener?: {
     onClose?: (_id: string) => void;

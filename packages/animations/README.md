@@ -1,5 +1,43 @@
-# Vue 3 + TypeScript + Vite
+# @blink-the-ui/animations
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Blink UI 动画组件库，提供多种动画效果。
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## 安装
+
+```bash
+npm install @blink-the-ui/animations
+```
+
+## 使用
+
+```vue
+<template>
+  <Fade>
+    <div v-if="show">淡入淡出动画</div>
+  </Fade>
+
+  <HoverFloatUp>
+    <Button>悬停浮动动画</Button>
+  </HoverFloatUp>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+import { Fade, HoverFloatUp } from '@blink-the-ui/animations';
+import { Button } from '@blink-the-ui/components';
+
+const show = ref(true);
+</script>
+```
+
+## 可用动画
+
+- `Fade` - 淡入淡出动画
+- `HoverFloatUp` - 悬停时向上浮动
+- `Ripple` - 波纹效果
+- `Bubble` - 冒泡动画
+- `Stacked` - 堆叠动画
+
+## 许可证
+
+[MIT](../../../LICENSE)
