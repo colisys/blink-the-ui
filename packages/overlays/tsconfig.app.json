@@ -13,7 +13,7 @@
     "skipLibCheck": true,
     "outDir": "./dist",
     "paths": {
-      "@blink-the-ui/components": ["../components/src"],
+      "@blink-the-ui/*": ["../*/src"],
       "@/*": ["./src/*"]
     },
 

@@ -34,6 +34,7 @@ export default defineConfig({
           vue: 'Vue',
           '@blink-the-ui/i18n': 'BlinkTheUIi18n',
         },
+        exports: 'named',
       },
     },
   },

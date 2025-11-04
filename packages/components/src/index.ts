@@ -1,16 +1,18 @@
 import type { App } from 'vue';
 import './index.less';
-import { BlinkButton } from './button';
-import { BlinkSwitch } from './switch';
-import { BlinkText } from './text';
-import { BlinkLabel } from './label';
-import { BlinkAlert } from './alert';
-import { BlinkInput } from './input';
-import { BlinkProgress } from './progress';
-import { BlinkCheckbox } from './checkbox';
-import { BlinkForm } from './form';
-import { BlinkUpload } from './upload';
+import BlinkButton from './button';
+import BlinkSwitch from './switch';
+import BlinkText from './text';
+import BlinkLabel from './label';
+import BlinkAlert from './alert';
+import BlinkInput from './input';
+import BlinkProgress from './progress';
+import BlinkCheckbox from './checkbox';
+import BlinkForm from './form';
+import BlinkUpload from './upload';
+import { i18n } from '@blink-the-ui/i18n';
 
+export * from './types';
 export {
   BlinkButton,
   BlinkSwitch,
@@ -23,10 +25,6 @@ export {
   BlinkForm,
   BlinkUpload,
 };
-
-export * from './types';
-import { i18n } from '@blink-the-ui/i18n';
-import { setApplicationContext } from '@blink-the-ui/helper';
 
 export default {
   install: (app: App) => {
@@ -55,6 +53,5 @@ export default {
     import('./form').then(mod => app.component(mod.default.name!, mod.default));
 
     app.use(i18n);
-    setApplicationContext(app._context);
   },
 };

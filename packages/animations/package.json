@@ -1,7 +1,7 @@
 {
   "name": "@blink-the-ui/animations",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.10",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -20,8 +20,7 @@
     ".": {
       "import": "./src/index.ts",
       "require": "./src/index.ts"
-    },
-    "./style.css": "./dist/style.css"
+    }
   },
   "files": [
     "dist"
@@ -48,6 +47,6 @@
     "typescript": "~5.9.3",
     "vite": "^7.1.9",
     "vite-plugin-dts": "^4.5.4",
-    "vue-tsc": "^3.1.2"
+    "vue-tsc": "^3.1.0"
   }
 }

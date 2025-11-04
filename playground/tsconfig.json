@@ -14,7 +14,7 @@
     "noEmit": true,
 
     "paths": {
-      "@blink-the-ui/components/*": ["../packages/components/src/*"]
+      "@blink-the-ui/*/": ["../packages/*/src/"]
     },
 
     /* Linting */

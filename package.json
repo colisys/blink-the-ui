@@ -1,6 +1,6 @@
 {
   "name": "blink-the-ui",
-  "version": "0.0.1-alpha.9",
+  "version": "0.0.1-alpha.10",
   "description": "A simple vue3 component library",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,10 @@
     "dist:icons": "pnpm -C packages/icons dist",
     "dist:layout": "pnpm -C packages/layout dist",
     "dist:overlays": "pnpm -C packages/overlays dist",
-    "dist:all": "pnpm dist:animations && pnpm dist:components && pnpm dist:directives && pnpm dist:icons && pnpm dist:layout && pnpm dist:overlays"
+    "dist:all": "pnpm dist:animations && pnpm dist:components && pnpm dist:directives && pnpm dist:icons && pnpm dist:layout && pnpm dist:overlays",
+    "publish": "pnpm -r publish",
+    "sync:version": "node scripts/sync-version.mjs",
+    "prepare": "husky install"
   },
   "keywords": [
     "blink-the-ui",
@@ -30,6 +33,53 @@
   "author": "colisys <colisys@duck.com>",
   "type": "commonjs",
   "license": "MIT",
+  "dependencies": {
+    "@blink-the-ui/components": "workspace:*",
+    "@blink-the-ui/animations": "workspace:*",
+    "@blink-the-ui/layout": "workspace:*",
+    "@blink-the-ui/directives": "workspace:*",
+    "@blink-the-ui/overlays": "workspace:*",
+    "@blink-the-ui/icons": "workspace:*",
+    "@blink-the-ui/helper": "workspace:*",
+    "@blink-the-ui/i18n": "workspace:*",
+    "@blink-the-ui/theme": "workspace:*"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.js"
+    },
+    "./components": {
+      "types": "./packages/components/dist/index.d.ts",
+      "import": "./packages/components/dist/index.js",
+      "require": "./packages/components/dist/index.umd.cjs"
+    },
+    "./animations": {
+      "types": "./packages/animations/dist/index.d.ts",
+      "import": "./packages/animations/dist/index.js",
+      "require": "./packages/animations/dist/index.umd.cjs"
+    },
+    "./layout": {
+      "types": "./packages/layout/dist/index.d.ts",
+      "import": "./packages/layout/dist/index.js",
+      "require": "./packages/layout/dist/index.umd.cjs"
+    },
+    "./directives": {
+      "types": "./packages/directives/dist/index.d.ts",
+      "import": "./packages/directives/dist/index.js",
+      "require": "./packages/directives/dist/index.umd.cjs"
+    },
+    "./overlays": {
+      "types": "./packages/overlays/dist/index.d.ts",
+      "import": "./packages/overlays/dist/index.js",
+      "require": "./packages/overlays/dist/index.umd.cjs"
+    },
+    "./icons": {
+      "types": "./packages/icons/dist/index.d.ts",
+      "import": "./packages/icons/dist/index.js",
+      "require": "./packages/icons/dist/index.umd.cjs"
+    }
+  },
   "devDependencies": {
     "@types/node": "^24.9.1",
     "@vue/tsconfig": "^0.8.1",

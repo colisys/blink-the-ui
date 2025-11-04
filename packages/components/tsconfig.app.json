@@ -16,7 +16,7 @@
     "outDir": "./dist",
     "pretty": false,
     "paths": {
-      "@blink-the-ui/overlays": ["../overlays/src"],
+      "@blink-the-ui/*": ["../*/src"],
       "@": ["./src"]
     },
 

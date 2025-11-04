@@ -12,6 +12,7 @@
     "emitDeclarationOnly": false,
     "outDir": "./dist",
     "paths": {
+      "@blink-the-ui/*": ["../*/src"],
       "@": ["./src"]
     },
 

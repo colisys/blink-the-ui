@@ -53,8 +53,15 @@
 <script lang="ts">
 import { defineComponent, ref, watch, type PropType } from 'vue';
 import type { GlobalVisual } from '../types';
-import { getColor } from '../../../helper/src';
-import { type BlinkProgressController } from '.';
+import { getColor } from '@blink-the-ui/helper';
+
+export type BlinkProgressController = {
+  suspend: () => void;
+  resume: () => void;
+  update: (_value: number) => void;
+  clear: () => void;
+  finish: () => void;
+};
 
 export default defineComponent({
   name: 'BlinkProgress',

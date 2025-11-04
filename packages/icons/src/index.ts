@@ -1,5 +1,5 @@
 import { h, type App } from 'vue';
-import { Icon } from './component';
+import { BlinkIcon } from './component';
 
 const tsxMods = import.meta.glob('./icons/*.tsx', { eager: true });
 const vueMods = import.meta.glob('./icons/*.vue', { eager: true });
@@ -22,7 +22,7 @@ export default {
       app.component(`Blink${name}`, {
         render() {
           return h(
-            Icon,
+            BlinkIcon,
             {},
             {
               default: () =>

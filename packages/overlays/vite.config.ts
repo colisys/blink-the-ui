@@ -34,6 +34,7 @@ export default defineConfig({
           vue: 'Vue',
           '@blink-the-ui/components': 'BlinkTheUIComponents',
         },
+        exports: 'named',
       },
     },
   },

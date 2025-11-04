@@ -11,6 +11,7 @@
     "declarationMap": true,
     "emitDeclarationOnly": false,
     "paths": {
+      "@blink-the-ui/*": ["../*/src"],
       "@": ["./src"]
     },
 

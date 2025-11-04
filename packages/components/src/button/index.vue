@@ -37,22 +37,23 @@ import {
   type ButtonHTMLAttributes,
   type PropType,
 } from 'vue';
-import { type BlinkButtonOutline, type BlinkButtonVisual } from '.';
 import type { GlobalComponentSize } from '../types';
+import { type GlobalVisual } from '@blink-the-ui/theme';
+export type ButtonOutline = 'solid' | 'ghost';
 
 const disabled = ref(false);
-const type = ref<BlinkButtonVisual>('default');
+const type = ref<GlobalVisual>('default');
 const size = ref<GlobalComponentSize>('md');
 
 export default defineComponent({
   name: 'BlinkButton',
   props: {
     outline: {
-      type: String as PropType<BlinkButtonOutline>,
+      type: String as PropType<ButtonOutline>,
       default: 'ghost',
     },
     visual: {
-      type: String as PropType<BlinkButtonVisual>,
+      type: String as PropType<GlobalVisual>,
       default: 'default',
     },
     disabled: {

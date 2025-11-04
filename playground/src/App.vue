@@ -7,10 +7,10 @@ import {
   BlinkAlert,
   BlinkInput,
   BlinkProgress,
-  GlobalVisual,
   BlinkCheckbox,
   BlinkForm,
   BlinkUpload,
+  GlobalVisual,
 } from '@blink-the-ui/components';
 
 import {

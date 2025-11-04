@@ -1,7 +1,7 @@
 {
   "name": "@blink-the-ui/directives",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.10",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -47,6 +47,6 @@
     "prettier": "^3.6.2",
     "typescript": "~5.9.3",
     "vite": "^7.1.9",
-    "vue-tsc": "3.1.1"
+    "vue-tsc": "^3.1.0"
   }
 }

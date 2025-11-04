@@ -1,6 +1,6 @@
 {
   "name": "@blink-the-ui/i18n",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.10",
   "description": "i18n support for blink-the-ui",
   "main": "src/index.ts",
   "types": "src/index.ts",

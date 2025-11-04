@@ -114,16 +114,9 @@ export {
 export default {
   install: (app: App) => {
     setApplicationContext(app._context);
-
-    import('./overlay').then(mod =>
-      app.component(mod.default.name!, mod.default)
-    );
-    import('./dialog').then(mod =>
-      app.component(mod.default.name!, mod.default)
-    );
-    import('./dock').then(mod => app.component(mod.default.name!, mod.default));
-    import('./popup').then(mod =>
-      app.component(mod.default.name!, mod.default)
-    );
+    app.component(BlinkOverlay.name!, BlinkOverlay);
+    app.component(BlinkOverlayDialog.name!, BlinkOverlayDialog);
+    app.component(BlinkOverlayDock.name!, BlinkOverlayDock);
+    app.component(BlinkOverlayPopup.name!, BlinkOverlayPopup);
   },
 };

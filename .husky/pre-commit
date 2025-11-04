@@ -1,1 +1,2 @@
-npx lint-staged -q
+node scripts/sync-version.mjs
+npx lint-staged --quiet

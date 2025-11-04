@@ -1,15 +1,17 @@
 {
   "name": "@blink-the-ui/icons",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.10",
   "description": "Icons for blink-the-ui",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build",
     "clean": "rm -rf dist && mkdir dist",
-    "dist": "pnpm clean && pnpm build"
+    "dist": "pnpm clean && pnpm build && pnpm types",
+    "types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist --jsx preserve src/index.ts"
   },
+  "types": "./dist/index.d.ts",
   "main": "./dist/index.umd.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
       "import": "./src/index.ts",
@@ -24,23 +26,21 @@
     "vue3",
     "icons"
   ],
-  "type": "commonjs",
+  "type": "module",
   "author": "colisys <colisys@duck.com>",
   "license": "MIT",
   "dependencies": {
+    "vue": "^3.5.22",
     "vue-i18n": "^9.0.0"
   },
-  "peerDependencies": {
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitejs/plugin-vue-jsx": "^5.1.1",
     "@vue/tsconfig": "^0.8.1",
     "prettier": "^3.6.2",
     "typescript": "~5.9.3",
-    "vue": "^3.0.0",
+    "vite": "^7.1.9",
     "vue-tsc": "^3.1.0"
-  },
-  "devDependencies": {
-    "@types/node": "^24.9.1",
-    "@vitejs/plugin-vue": "^6.0.1",
-    "@vitejs/plugin-vue-jsx": "^5.1.1",
-    "vite": "^7.1.9"
   }
 }

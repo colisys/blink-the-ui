@@ -10,9 +10,18 @@
 
 <script lang="ts">
 import { defineComponent, onUnmounted, provide, ref, type PropType } from 'vue';
-import { BlinkFormContainerSymbol, type BlinkFormItems } from '.';
-import type { Rules, ValidateError } from 'async-validator';
-import Schema from 'async-validator';
+import Schema, {
+  type RuleItem,
+  type Rules,
+  type ValidateError,
+} from 'async-validator';
+export const BlinkFormContainerSymbol = Symbol.for('BlinkFormContainer');
+export type BlinkFormItems = Array<BlinkFormItemInterface>;
+export interface BlinkFormItemInterface {
+  name: string;
+  value: () => any;
+  validate?: RuleItem;
+}
 
 export default defineComponent({
   name: 'BlinkForm',
