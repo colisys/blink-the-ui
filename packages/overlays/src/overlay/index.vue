@@ -171,8 +171,8 @@ let maxZIndex = 1000;
 export default defineComponent({
   name: 'BlinkOverlay',
   components: {
-    BlinkAnimFade,
-    BlinkButton,
+    BlinkAnimFade: BlinkAnimFade as any,
+    BlinkButton: BlinkButton as any,
   },
   props: {
     closeable: {
