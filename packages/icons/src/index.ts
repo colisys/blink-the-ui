@@ -1,10 +1,10 @@
 import { h, type App } from 'vue';
-import { BlinkIcon } from './component';
+import { BlinkIcon } from './component/index.ts';
 
-const tsxMods = import.meta.glob('./icons/*.tsx', { eager: true });
-const vueMods = import.meta.glob('./icons/*.vue', { eager: true });
-const pngMods = import.meta.glob('./icons/*.png', { eager: true });
-const svgMods = import.meta.glob('./icons/*.svg', { eager: true });
+const tsxMods = (import.meta as any).glob('./icons/*.tsx', { eager: true });
+const vueMods = (import.meta as any).glob('./icons/*.vue', { eager: true });
+const pngMods = (import.meta as any).glob('./icons/*.png', { eager: true });
+const svgMods = (import.meta as any).glob('./icons/*.svg', { eager: true });
 
 export default {
   install: (app: App) => {

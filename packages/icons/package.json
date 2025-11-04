@@ -1,13 +1,13 @@
 {
   "name": "@blink-the-ui/icons",
-  "version": "0.0.1-alpha.11",
+  "version": "0.0.1-alpha.12",
   "description": "Icons for blink-the-ui",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build",
     "clean": "rm -rf dist && mkdir dist",
     "dist": "pnpm clean && pnpm build && pnpm types",
-    "types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist --jsx preserve src/index.ts"
+    "types": "vue-tsc --module nodenext --moduleResolution nodenext --declaration --emitDeclarationOnly --allowImportingTsExtensions --outDir dist --jsx preserve src/index.ts"
   },
   "types": "./dist/index.d.ts",
   "main": "./dist/index.umd.js",

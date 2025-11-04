@@ -1,4 +1,4 @@
-import BlinkOverlayDialog from './index.tsx';
+import BlinkOverlayDialog from './component';
 
 export { BlinkOverlayDialog };
 export default BlinkOverlayDialog;

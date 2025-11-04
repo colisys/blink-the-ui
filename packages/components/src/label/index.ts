@@ -1,4 +1,4 @@
-import BlinkLabel from './index.tsx';
+import BlinkLabel from './component';
 
 export { BlinkLabel };
 export default BlinkLabel;

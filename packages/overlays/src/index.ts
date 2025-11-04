@@ -3,6 +3,7 @@ import BlinkOverlay from './overlay';
 import BlinkOverlayDialog from './dialog';
 import BlinkOverlayDock from './dock';
 import BlinkOverlayPopup from './popup';
+import BlinkOverlayToast from './toast';
 
 import './index.less';
 import {
@@ -108,15 +109,17 @@ export {
   BlinkOverlayDialog,
   BlinkOverlayDock,
   BlinkOverlayPopup,
+  BlinkOverlayToast,
   createOverlay,
 };
 
 export default {
   install: (app: App) => {
     setApplicationContext(app._context);
-    app.component(BlinkOverlay.name!, BlinkOverlay);
-    app.component(BlinkOverlayDialog.name!, BlinkOverlayDialog);
-    app.component(BlinkOverlayDock.name!, BlinkOverlayDock);
-    app.component(BlinkOverlayPopup.name!, BlinkOverlayPopup);
+    import('./overlay').then(m => app.component(m.default.name!, m.default));
+    import('./dialog').then(m => app.component(m.default.name!, m.default));
+    import('./dock').then(m => app.component(m.default.name!, m.default));
+    import('./popup').then(m => app.component(m.default.name!, m.default));
+    import('./toast').then(m => app.component(m.default.name!, m.default));
   },
 };
