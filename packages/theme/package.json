@@ -1,6 +1,6 @@
 {
   "name": "@blink-the-ui/theme",
-  "version": "0.0.1-alpha.10",
+  "version": "0.0.1-alpha.11",
   "description": "theme for blink-the-ui",
   "main": "src/index.ts",
   "types": "src/index.ts",

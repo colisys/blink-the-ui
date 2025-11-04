@@ -1,6 +1,6 @@
 {
   "name": "@blink-the-ui/helper",
-  "version": "0.0.1-alpha.10",
+  "version": "0.0.1-alpha.11",
   "description": "helper for blink-the-ui",
   "main": "src/index.ts",
   "types": "src/index.ts",

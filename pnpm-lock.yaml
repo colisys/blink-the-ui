@@ -10,34 +10,6 @@ overrides:
 importers:
 
   .:
-    dependencies:
-      '@blink-the-ui/animations':
-        specifier: workspace:*
-        version: link:packages/animations
-      '@blink-the-ui/components':
-        specifier: workspace:*
-        version: link:packages/components
-      '@blink-the-ui/directives':
-        specifier: workspace:*
-        version: link:packages/directives
-      '@blink-the-ui/helper':
-        specifier: workspace:*
-        version: link:packages/helper
-      '@blink-the-ui/i18n':
-        specifier: workspace:*
-        version: link:packages/i18n
-      '@blink-the-ui/icons':
-        specifier: workspace:*
-        version: link:packages/icons
-      '@blink-the-ui/layout':
-        specifier: workspace:*
-        version: link:packages/layout
-      '@blink-the-ui/overlays':
-        specifier: workspace:*
-        version: link:packages/overlays
-      '@blink-the-ui/theme':
-        specifier: workspace:*
-        version: link:packages/theme
     devDependencies:
       '@types/node':
         specifier: ^24.9.1

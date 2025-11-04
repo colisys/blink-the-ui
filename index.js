@@ -1,9 +1,10 @@
-export { default as components } from '@blink-the-ui/components';
-export { default as animations } from '@blink-the-ui/animations';
-export { default as layout } from '@blink-the-ui/layout';
-export { default as directives } from '@blink-the-ui/directives';
-export { default as overlays } from '@blink-the-ui/overlays';
-export { default as icons } from '@blink-the-ui/icons';
+export { default as components } from './packages/components/src';
+export { default as animations } from './packages/animations/src';
+export { default as layout } from './packages/layout/src';
+export { default as directives } from './packages/directives/src';
+export { default as overlays } from './packages/overlays/src';
+export { default as icons } from './packages/icons/src';
+export { default as i18n } from './packages/i18n/src';
 
 export default {
   components,
@@ -12,4 +13,5 @@ export default {
   directives,
   overlays,
   icons,
+  i18n,
 };
