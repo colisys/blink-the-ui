@@ -1,16 +1,27 @@
 {
   "name": "@blink-the-ui/helper",
-  "version": "0.0.1-alpha.12",
+  "version": "0.0.1-alpha.13",
   "description": "helper for blink-the-ui",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
-  "private": true,
-  "scripts": {},
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "private": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsc --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop src/index.ts",
+    "types": "tsc --declaration --emitDeclarationOnly --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop --module preserve --moduleResolution bundler src/index.ts",
+    "dist": "pnpm clean && pnpm build && pnpm types"
+  },
   "keywords": [
     "blink-the-ui",
     "vue3",
     "helper"
   ],
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
+    }
+  },
   "author": "colisys <colisys@duck.com>",
   "license": "MIT",
   "dependencies": {},

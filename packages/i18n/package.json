@@ -1,10 +1,15 @@
 {
   "name": "@blink-the-ui/i18n",
-  "version": "0.0.1-alpha.12",
+  "version": "0.0.1-alpha.13",
   "description": "i18n support for blink-the-ui",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
-  "scripts": {},
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsc --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop src/index.ts",
+    "types": "tsc --declaration --emitDeclarationOnly --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop --module preserve --moduleResolution bundler src/index.ts",
+    "dist": "pnpm clean && pnpm build && pnpm types"
+  },
   "keywords": [
     "blink-the-ui",
     "vue3",
