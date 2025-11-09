@@ -1,6 +1,6 @@
 {
   "name": "@blink-the-ui/icons",
-  "version": "0.0.1-alpha.17",
+  "version": "0.0.1-alpha.18",
   "description": "Icons for blink-the-ui",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,8 +14,8 @@
   "module": "./dist/index.js",
   "exports": {
     ".": {
-      "import": "./src/index.ts",
-      "require": "./src/index.ts"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.js"
     }
   },
   "files": [
