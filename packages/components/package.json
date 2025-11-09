@@ -1,7 +1,7 @@
 {
   "name": "@blink-the-ui/components",
   "private": false,
-  "version": "0.0.1-alpha.13",
+  "version": "0.0.1-alpha.14",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -55,5 +55,8 @@
     "typescript": "~5.9.3",
     "vite": "^7.1.9",
     "vue-tsc": "^3.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
