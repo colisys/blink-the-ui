@@ -1,6 +1,6 @@
 {
   "name": "@blink-the-ui/test",
-  "version": "0.0.1-alpha.16",
+  "version": "0.0.1-alpha.17",
   "description": "Test utils for blink-the-ui",
   "type": "module",
   "scripts": {
@@ -16,11 +16,11 @@
   "dependencies": {
     "jsdom": "^27.0.1",
     "vitest": "^3.2.4",
-    "@blink-the-ui/components": "workspace:components",
-    "@blink-the-ui/animations": "workspace:animations",
-    "@blink-the-ui/directives": "workspace:directives",
-    "@blink-the-ui/i18n": "workspace:i18n",
-    "@blink-the-ui/helper": "workspace:helper",
+    "@blink-the-ui/components": "workspace:*",
+    "@blink-the-ui/animations": "workspace:*",
+    "@blink-the-ui/directives": "workspace:*",
+    "@blink-the-ui/i18n": "workspace:*",
+    "@blink-the-ui/helper": "workspace:*",
     "@vue/test-utils": "^2.4.6"
   },
   "peerDependencies": {

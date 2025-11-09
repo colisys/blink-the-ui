@@ -1,7 +1,7 @@
 {
   "name": "@blink-the-ui/components",
   "private": false,
-  "version": "0.0.1-alpha.16",
+  "version": "0.0.1-alpha.17",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -26,13 +26,13 @@
     "dist"
   ],
   "dependencies": {
-    "@blink-the-ui/animations": "workspace:animations",
-    "@blink-the-ui/directives": "workspace:directives",
-    "@blink-the-ui/helper": "workspace:helper",
-    "@blink-the-ui/i18n": "workspace:i18n",
-    "@blink-the-ui/layout": "workspace:layout",
-    "@blink-the-ui/overlays": "workspace:overlays",
-    "@blink-the-ui/theme": "workspace:theme",
+    "@blink-the-ui/animations": "workspace:*",
+    "@blink-the-ui/directives": "workspace:*",
+    "@blink-the-ui/helper": "workspace:*",
+    "@blink-the-ui/i18n": "workspace:*",
+    "@blink-the-ui/layout": "workspace:*",
+    "@blink-the-ui/overlays": "workspace:*",
+    "@blink-the-ui/theme": "workspace:*",
     "async-validator": "^4.2.5",
     "vue": "^3.5.22",
     "vue-i18n": "^9.0.0"

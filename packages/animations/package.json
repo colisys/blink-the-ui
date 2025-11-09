@@ -1,7 +1,7 @@
 {
   "name": "@blink-the-ui/animations",
   "private": false,
-  "version": "0.0.1-alpha.16",
+  "version": "0.0.1-alpha.17",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -26,7 +26,7 @@
     "dist"
   ],
   "dependencies": {
-    "@blink-the-ui/helper": "workspace:helper",
+    "@blink-the-ui/helper": "workspace:*",
     "vue": "^3.5.22"
   },
   "keywords": [
