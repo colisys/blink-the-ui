@@ -32,5 +32,8 @@
   },
   "vitest": {
     "environment": "jsdom"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

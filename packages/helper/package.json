@@ -22,6 +22,9 @@
       "require": "./src/index.ts"
     }
   },
+  "files": [
+    "dist"
+  ],
   "author": "colisys <colisys@duck.com>",
   "license": "MIT",
   "dependencies": {},
