@@ -1,6 +1,6 @@
 <template>
   <div class="blink-upload-wrapper">
-    <BlinkInput disabled placeholder="Choose file">
+    <BlinkInput disabled :placeholder="t('components.upload.placeholder')">
       <template #append>
         <div class="blink-upload-buttons">
           <BlinkButton
@@ -32,6 +32,7 @@
 import { defineComponent, ref } from 'vue';
 import BlinkInput from '../input';
 import BlinkButton from '../button';
+import { getI18n } from '@blink-the-ui/helper';
 
 export default defineComponent({
   name: 'BlinkUpload',
@@ -68,12 +69,14 @@ export default defineComponent({
     clear: () => true,
   },
   setup(__props, { emit }) {
+    const t = getI18n();
     const uploadInputRef = ref<HTMLElement | null>(null);
     const handleFileSelect = (e: InputEvent) => {
       emit('change', (e.target as HTMLInputElement).files);
     };
 
     return {
+      t,
       uploadInputRef,
       handleFileSelect,
     };

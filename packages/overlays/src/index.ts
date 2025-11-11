@@ -5,7 +5,6 @@ import BlinkOverlayDock from './dock';
 import BlinkOverlayPopup from './popup';
 import BlinkOverlayToast from './toast';
 
-import './index.less';
 import {
   setApplicationContext,
   useApplicationContext,

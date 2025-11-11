@@ -70,7 +70,7 @@ importers:
   packages/animations:
     dependencies:
       '@blink-the-ui/helper':
-        specifier: workspace:helper
+        specifier: workspace:*
         version: link:../helper
       vue:
         specifier: ^3.5.22
@@ -116,25 +116,22 @@ importers:
   packages/components:
     dependencies:
       '@blink-the-ui/animations':
-        specifier: workspace:animations
+        specifier: workspace:*
         version: link:../animations
       '@blink-the-ui/directives':
-        specifier: workspace:directives
+        specifier: workspace:*
         version: link:../directives
       '@blink-the-ui/helper':
-        specifier: workspace:helper
+        specifier: workspace:*
         version: link:../helper
       '@blink-the-ui/i18n':
-        specifier: workspace:i18n
+        specifier: workspace:*
         version: link:../i18n
       '@blink-the-ui/layout':
-        specifier: workspace:layout
+        specifier: workspace:*
         version: link:../layout
-      '@blink-the-ui/overlays':
-        specifier: workspace:overlays
-        version: link:../overlays
       '@blink-the-ui/theme':
-        specifier: workspace:theme
+        specifier: workspace:*
         version: link:../theme
       async-validator:
         specifier: ^4.2.5
@@ -183,7 +180,7 @@ importers:
   packages/directives:
     dependencies:
       '@blink-the-ui/i18n':
-        specifier: workspace:i18n
+        specifier: workspace:*
         version: link:../i18n
       vue:
         specifier: ^3.5.22
@@ -228,6 +225,12 @@ importers:
 
   packages/helper:
     dependencies:
+      '@types/node':
+        specifier: ^24.9.1
+        version: 24.9.1
+      '@vitejs/plugin-vue':
+        specifier: ^6.0.1
+        version: 6.0.1(vite@7.1.12(@types/node@24.9.1)(less@4.4.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))
       '@vue/tsconfig':
         specifier: ^0.8.1
         version: 0.8.1(typescript@5.9.3)(vue@3.5.22(typescript@5.9.3))
@@ -237,24 +240,9 @@ importers:
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
-      vue:
-        specifier: ^3.0.0
-        version: 3.5.22(typescript@5.9.3)
-      vue-tsc:
-        specifier: ^3.1.0
-        version: 3.1.2(typescript@5.9.3)
-
-  packages/i18n:
-    dependencies:
-      '@vue/tsconfig':
-        specifier: ^0.8.1
-        version: 0.8.1(typescript@5.9.3)(vue@3.5.22(typescript@5.9.3))
-      prettier:
-        specifier: ^3.6.2
-        version: 3.6.2
-      typescript:
-        specifier: ~5.9.3
-        version: 5.9.3
+      vite:
+        specifier: ^7.1.9
+        version: 7.1.12(@types/node@24.9.1)(less@4.4.2)(yaml@2.8.1)
       vue:
         specifier: ^3.0.0
         version: 3.5.22(typescript@5.9.3)
@@ -264,10 +252,36 @@ importers:
       vue-tsc:
         specifier: ^3.1.0
         version: 3.1.2(typescript@5.9.3)
-    devDependencies:
+
+  packages/i18n:
+    dependencies:
       '@types/node':
         specifier: ^24.9.1
         version: 24.9.1
+      '@vitejs/plugin-vue':
+        specifier: ^6.0.1
+        version: 6.0.1(vite@7.1.12(@types/node@24.9.1)(less@4.4.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))
+      '@vue/tsconfig':
+        specifier: ^0.8.1
+        version: 0.8.1(typescript@5.9.3)(vue@3.5.22(typescript@5.9.3))
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
+      typescript:
+        specifier: ~5.9.3
+        version: 5.9.3
+      vite:
+        specifier: ^7.1.9
+        version: 7.1.12(@types/node@24.9.1)(less@4.4.2)(yaml@2.8.1)
+      vue:
+        specifier: ^3.0.0
+        version: 3.5.22(typescript@5.9.3)
+      vue-i18n:
+        specifier: ^9.0.0
+        version: 9.14.5(vue@3.5.22(typescript@5.9.3))
+      vue-tsc:
+        specifier: ^3.1.0
+        version: 3.1.2(typescript@5.9.3)
 
   packages/icons:
     dependencies:
@@ -306,10 +320,10 @@ importers:
   packages/layout:
     dependencies:
       '@blink-the-ui/i18n':
-        specifier: workspace:i18n
+        specifier: workspace:*
         version: link:../i18n
       '@blink-the-ui/theme':
-        specifier: workspace:theme
+        specifier: workspace:*
         version: link:../theme
       vue:
         specifier: ^3.5.22
@@ -355,22 +369,22 @@ importers:
   packages/overlays:
     dependencies:
       '@blink-the-ui/animations':
-        specifier: workspace:animations
+        specifier: workspace:*
         version: link:../animations
       '@blink-the-ui/components':
-        specifier: workspace:components
+        specifier: workspace:*
         version: link:../components
       '@blink-the-ui/directives':
-        specifier: workspace:directives
+        specifier: workspace:*
         version: link:../directives
       '@blink-the-ui/helper':
-        specifier: workspace:helper
+        specifier: workspace:*
         version: link:../helper
       '@blink-the-ui/i18n':
-        specifier: workspace:i18n
+        specifier: workspace:*
         version: link:../i18n
       '@blink-the-ui/theme':
-        specifier: workspace:theme
+        specifier: workspace:*
         version: link:../theme
       vue:
         specifier: ^3.5.22
@@ -416,19 +430,19 @@ importers:
   packages/tests:
     dependencies:
       '@blink-the-ui/animations':
-        specifier: workspace:animations
+        specifier: workspace:*
         version: link:../animations
       '@blink-the-ui/components':
-        specifier: workspace:components
+        specifier: workspace:*
         version: link:../components
       '@blink-the-ui/directives':
-        specifier: workspace:directives
+        specifier: workspace:*
         version: link:../directives
       '@blink-the-ui/helper':
-        specifier: workspace:helper
+        specifier: workspace:*
         version: link:../helper
       '@blink-the-ui/i18n':
-        specifier: workspace:i18n
+        specifier: workspace:*
         version: link:../i18n
       '@vue/test-utils':
         specifier: ^2.4.6
@@ -466,6 +480,9 @@ importers:
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
+      vite:
+        specifier: ^7.1.9
+        version: 7.1.12(@types/node@24.9.1)(less@4.4.2)(yaml@2.8.1)
       vue:
         specifier: ^3.0.0
         version: 3.5.22(typescript@5.9.3)

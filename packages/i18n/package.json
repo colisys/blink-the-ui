@@ -1,14 +1,22 @@
 {
   "name": "@blink-the-ui/i18n",
-  "version": "0.0.1-alpha.18",
+  "version": "0.0.1-alpha.19",
   "description": "i18n support for blink-the-ui",
-  "main": "dist/index.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.js"
+    }
+  },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsc --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop src/index.ts",
+    "build": "vue-tsc -b && vite build",
     "types": "tsc --declaration --emitDeclarationOnly --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop --module preserve --moduleResolution bundler src/index.ts",
-    "dist": "pnpm clean && pnpm build && pnpm types"
+    "dist": "pnpm clean && mkdir dist && pnpm build && pnpm types"
   },
   "keywords": [
     "blink-the-ui",
@@ -30,7 +38,9 @@
     "typescript": "~5.9.3",
     "vue": "^3.0.0",
     "vue-tsc": "^3.1.0",
-    "@types/node": "^24.9.1"
+    "@types/node": "^24.9.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.1.9"
   },
   "publishConfig": {
     "access": "public"

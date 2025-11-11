@@ -1,5 +1,5 @@
 // @ts-nocheck
-
+import { useI18n } from 'vue-i18n';
 import { getCurrentInstance, type AppContext } from 'vue';
 
 export function slice<T>(array: T[], start: number, length: number): T[] {
@@ -53,6 +53,18 @@ export function useApplicationContext() {
 
 export function setApplicationContext(context: AppContext) {
   appContext = context;
+}
+
+export function getI18n(): (key: string, _default?: string) => string {
+  let t: ReturnType<typeof useI18n>['t'];
+  try {
+    const i18n = useI18n();
+    t = i18n.t;
+  } catch (e) {
+    t = (key: string, _default?: string) => _default ?? key;
+    console.warn('i18n not available, using default implementation');
+  }
+  return t;
 }
 
 export { FormBuilder } from './builder/form';

@@ -1,5 +1,4 @@
 import type { App } from 'vue';
-import './index.less';
 import BlinkButton from './button';
 import BlinkSwitch from './switch';
 import BlinkText from './text';
@@ -10,7 +9,8 @@ import BlinkProgress from './progress';
 import BlinkCheckbox from './checkbox';
 import BlinkForm from './form';
 import BlinkUpload from './upload';
-import { i18n } from '@blink-the-ui/i18n';
+import BlinkQuote from './quote';
+import i18n from '@blink-the-ui/i18n';
 
 export * from './types';
 export {
@@ -24,6 +24,7 @@ export {
   BlinkCheckbox,
   BlinkForm,
   BlinkUpload,
+  BlinkQuote,
 };
 
 export default {
@@ -51,6 +52,12 @@ export default {
       app.component(mod.default.name!, mod.default)
     );
     import('./form').then(mod => app.component(mod.default.name!, mod.default));
+    import('./upload').then(mod =>
+      app.component(mod.default.name!, mod.default)
+    );
+    import('./quote').then(mod =>
+      app.component(mod.default.name!, mod.default)
+    );
 
     app.use(i18n);
   },

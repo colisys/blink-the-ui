@@ -37,7 +37,7 @@ import {
 
 import { ref } from 'vue';
 import { h } from 'vue';
-import { BlinkProgressController } from '@blink-the-ui/components/progress';
+import { type BlinkProgressController } from '@blink-the-ui/components';
 
 const times = ref(0);
 
@@ -367,7 +367,12 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
   </div>
 </template>
 
-<style>
+<style lang="less">
+@import '@blink-the-ui/components/style.css';
+@import '@blink-the-ui/animations/style.css';
+@import '@blink-the-ui/overlays/style.css';
+@import '@blink-the-ui/layout/style.css';
+
 body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

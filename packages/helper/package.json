@@ -1,15 +1,17 @@
 {
   "name": "@blink-the-ui/helper",
-  "version": "0.0.1-alpha.18",
+  "version": "0.0.1-alpha.19",
   "description": "helper for blink-the-ui",
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.js",
-  "private": false,
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.mjs",
   "scripts": {
+    "dev": "vite",
     "clean": "rm -rf dist",
-    "build": "tsc --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop src/index.ts",
-    "types": "tsc --declaration --emitDeclarationOnly --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop --module preserve --moduleResolution bundler src/index.ts",
-    "dist": "pnpm clean && pnpm build && pnpm types"
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist src/index.ts",
+    "dist": "pnpm clean && mkdir dist && pnpm build && pnpm types"
   },
   "keywords": [
     "blink-the-ui",
@@ -18,8 +20,9 @@
   ],
   "exports": {
     ".": {
-      "import": "./src/index.ts",
-      "require": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.js"
     }
   },
   "files": [
@@ -27,12 +30,17 @@
   ],
   "author": "colisys <colisys@duck.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "vue-i18n": "^9.0.0"
+  },
   "peerDependencies": {
     "vue": "^3.0.0",
     "@vue/tsconfig": "^0.8.1",
     "prettier": "^3.6.2",
     "typescript": "~5.9.3",
-    "vue-tsc": "^3.1.0"
+    "vue-tsc": "^3.1.0",
+    "@types/node": "^24.9.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.1.9"
   }
 }

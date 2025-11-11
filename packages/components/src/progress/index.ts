@@ -1,4 +1,4 @@
-import BlinkProgress, { type BlinkProgressController } from './index.vue';
+import BlinkProgress from './index.vue';
 
-export { BlinkProgress, type BlinkProgressController };
+export { BlinkProgress };
 export default BlinkProgress;

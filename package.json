@@ -1,6 +1,6 @@
 {
   "name": "blink-the-ui",
-  "version": "0.0.1-alpha.18",
+  "version": "0.0.1-alpha.19",
   "description": "A simple vue3 component library",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,10 @@
     "dist:icons": "pnpm -C packages/icons dist",
     "dist:layout": "pnpm -C packages/layout dist",
     "dist:overlays": "pnpm -C packages/overlays dist",
-    "dist:all": "pnpm dist:animations && pnpm dist:components && pnpm dist:directives && pnpm dist:icons && pnpm dist:layout && pnpm dist:overlays",
+    "dist:i18n": "pnpm -C packages/i18n dist",
+    "dist:helper": "pnpm -C packages/helper dist",
+    "dist:theme": "pnpm -C packages/theme dist",
+    "dist:all": "pnpm dist:i18n && pnpm dist:helper && pnpm dist:theme && pnpm dist:icons && pnpm dist:animations && pnpm dist:components && pnpm dist:directives && pnpm dist:layout && pnpm dist:overlays",
     "publish": "pnpm -r publish",
     "sync:version": "node scripts/sync-version.mjs"
   },
@@ -66,6 +69,16 @@
       "types": "./packages/icons/dist/index.d.ts",
       "import": "./packages/icons/dist/index.js",
       "require": "./packages/icons/dist/index.umd.cjs"
+    },
+    "./i18n": {
+      "types": "./packages/i18n/dist/index.d.ts",
+      "import": "./packages/i18n/dist/index.js",
+      "require": "./packages/i18n/dist/index.umd.cjs"
+    },
+    "./helper": {
+      "types": "./packages/helper/dist/index.d.ts",
+      "import": "./packages/helper/dist/index.js",
+      "require": "./packages/helper/dist/index.umd.cjs"
     }
   },
   "devDependencies": {

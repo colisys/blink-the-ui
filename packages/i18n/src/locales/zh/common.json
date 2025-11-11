@@ -25,6 +25,9 @@
     "switch": {
       "on": "开启",
       "off": "关闭"
+    },
+    "upload": {
+      "placeholder": "选择文件"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "@blink-the-ui/animations",
   "private": false,
-  "version": "0.0.1-alpha.18",
+  "version": "0.0.1-alpha.19",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -21,7 +21,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.umd.cjs"
     },
-    "./style.css": "./dist/index.css"
+    "./style.css": "./dist/index.css",
+    "./index.less": "./src/index.less"
   },
   "files": [
     "dist"

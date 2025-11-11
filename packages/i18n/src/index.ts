@@ -31,7 +31,6 @@ export const i18n = createI18n({
 export type I18nInstance = typeof i18n;
 export type { Composer };
 export default {
-  i18n,
   install: (app: App) => {
     i18n.install(app);
   },

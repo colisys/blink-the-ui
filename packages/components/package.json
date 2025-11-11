@@ -1,7 +1,7 @@
 {
   "name": "@blink-the-ui/components",
   "private": false,
-  "version": "0.0.1-alpha.18",
+  "version": "0.0.1-alpha.19",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,17 +11,19 @@
     "format:check": "prettier --check .",
     "clean": "rm -rf dist && mkdir dist",
     "dist": "pnpm clean && pnpm build && pnpm types",
-    "types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop src/index.ts"
+    "types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop --module preserve --moduleResolution bundler src/index.ts"
   },
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.umd.cjs"
     },
-    "./style.css": "./dist/index.css"
+    "./style.css": "./dist/index.css",
+    "./index.less": "./src/index.less"
   },
   "files": [
     "dist"
@@ -32,7 +34,6 @@
     "@blink-the-ui/helper": "workspace:*",
     "@blink-the-ui/i18n": "workspace:*",
     "@blink-the-ui/layout": "workspace:*",
-    "@blink-the-ui/overlays": "workspace:*",
     "@blink-the-ui/theme": "workspace:*",
     "async-validator": "^4.2.5",
     "vue": "^3.5.22",

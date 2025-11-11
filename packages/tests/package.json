@@ -1,6 +1,6 @@
 {
   "name": "@blink-the-ui/test",
-  "version": "0.0.1-alpha.18",
+  "version": "0.0.1-alpha.19",
   "description": "Test utils for blink-the-ui",
   "type": "module",
   "scripts": {

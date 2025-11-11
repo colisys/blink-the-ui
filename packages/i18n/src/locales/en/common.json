@@ -25,6 +25,9 @@
     "switch": {
       "on": "ON",
       "off": "OFF"
+    },
+    "upload": {
+      "placeholder": "Choose File"
     }
   }
 }

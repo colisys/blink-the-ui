@@ -70,10 +70,10 @@ import {
   onMounted,
 } from 'vue';
 import type { GlobalComponentSize } from '../types';
-import type { BlinkInputPasswordCheckingTrigger } from '.';
-import { useI18n } from 'vue-i18n';
+import { type InputPasswordCheckingTrigger } from '../types';
 import { BlinkFormContainerSymbol, type BlinkFormItems } from '../form';
 import type { RuleItem } from 'async-validator';
+import { getI18n } from '@blink-the-ui/helper';
 
 export default defineComponent<{
   name?: string;
@@ -85,7 +85,7 @@ export default defineComponent<{
   clearable?: boolean;
   maxLength?: number | undefined;
   type?: InputTypeHTMLAttribute;
-  passwordPeakingTrigger?: BlinkInputPasswordCheckingTrigger;
+  passwordPeakingTrigger?: InputPasswordCheckingTrigger;
   passwordHiddenIcon?: string;
   passwordShownIcon?: string;
   validateRule?: RuleItem;
@@ -129,7 +129,7 @@ export default defineComponent<{
       default: 'text',
     },
     passwordPeakingTrigger: {
-      type: String as PropType<BlinkInputPasswordCheckingTrigger>,
+      type: String as PropType<InputPasswordCheckingTrigger>,
       default: 'hold',
     },
     passwordHiddenIcon: {
@@ -154,17 +154,7 @@ export default defineComponent<{
     'update:modelValue',
   ] as const,
   setup(props, { emit }) {
-    let t: ReturnType<typeof useI18n>['t'];
-    try {
-      const i18n = useI18n();
-      t = i18n.t;
-    } catch (e) {
-      t = (key: string) => key;
-      console.warn(
-        'i18n not available in BlinkInput component, using default implementation'
-      );
-    }
-
+    const t = getI18n();
     const password = ref<boolean>(false);
     const placeholder = ref<String>('');
     const value = ref<String>('');
@@ -173,12 +163,14 @@ export default defineComponent<{
     const clearable = ref<boolean>(false);
     const maxLength = ref<Number | undefined>(undefined);
     const type = ref<InputTypeHTMLAttribute>('text');
-    const passwordPeakingTrigger =
-      ref<BlinkInputPasswordCheckingTrigger>('hold');
+    const passwordPeakingTrigger = ref<InputPasswordCheckingTrigger>('hold');
     const inputRef = ref<HTMLElement | null>(null);
 
     password.value = props.password ?? false;
-    placeholder.value = props.placeholder || t('components.input.placeholder');
+    placeholder.value = t(
+      'components.input.placeholder',
+      props.placeholder ?? ''
+    );
     value.value = props.value ?? '';
     disabled.value = props.disabled ?? false;
     size.value = props.size ?? 'md';
