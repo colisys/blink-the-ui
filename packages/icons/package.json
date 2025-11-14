@@ -1,6 +1,6 @@
 {
   "name": "@blink-the-ui/icons",
-  "version": "0.0.1-alpha.21",
+  "version": "0.0.1-alpha.22",
   "description": "Icons for blink-the-ui",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,7 @@
     "format:check": "prettier --check .",
     "clean": "rm -rf dist && mkdir dist",
     "dist": "pnpm clean && pnpm build && pnpm types",
-    "types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop src/index.ts"
+    "types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist --jsx preserve --resolveJsonModule --esModuleInterop --module preserve --moduleResolution bundler src/index.ts"
   },
   "types": "./dist/index.d.ts",
   "main": "./dist/index.umd.cjs",

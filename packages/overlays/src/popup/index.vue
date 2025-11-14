@@ -48,7 +48,6 @@
 <script lang="ts">
 import {
   defineComponent,
-  nextTick,
   onMounted,
   ref,
   type PropType,

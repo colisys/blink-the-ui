@@ -1,6 +1,6 @@
 {
   "name": "@blink-the-ui/i18n",
-  "version": "0.0.1-alpha.21",
+  "version": "0.0.1-alpha.22",
   "description": "i18n support for blink-the-ui",
   "type": "module",
   "main": "./dist/index.umd.cjs",

@@ -15,7 +15,7 @@ export default defineComponent({
   name: 'BlinkSelect',
   props: {},
   emits: {},
-  setup(props, { emit }) {
+  setup(__props) {
     return {};
   },
 });

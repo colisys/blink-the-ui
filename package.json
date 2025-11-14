@@ -1,6 +1,6 @@
 {
   "name": "blink-the-ui",
-  "version": "0.0.1-alpha.21",
+  "version": "0.0.1-alpha.22",
   "description": "A simple vue3 component library",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "dist:helper": "pnpm -C packages/helper dist",
     "dist:theme": "pnpm -C packages/theme dist",
     "dist:all": "pnpm dist:i18n && pnpm dist:helper && pnpm dist:theme && pnpm dist:icons && pnpm dist:animations && pnpm dist:components && pnpm dist:directives && pnpm dist:layout && pnpm dist:overlays",
-    "publish": "pnpm -r publish",
+    "publish": "pnpm dist:all && pnpm -r publish",
     "sync:version": "node scripts/sync-version.mjs"
   },
   "keywords": [

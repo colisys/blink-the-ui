@@ -8,4 +8,6 @@ type GlobalVisual =
   | 'light'
   | 'dark';
 type GlobalComponentSize = 'xs' | 'sm' | 'md' | 'lg';
-export type { GlobalVisual, GlobalComponentSize };
+type GlobalTheme = 'light' | 'dark';
+type GlobalPosition = 'top' | 'right' | 'bottom' | 'left';
+export type { GlobalVisual, GlobalComponentSize, GlobalTheme, GlobalPosition };

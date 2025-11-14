@@ -1,5 +1,5 @@
 import { h, type App } from 'vue';
-import { BlinkIcon } from './component/index.ts';
+import { BlinkIcon } from './component';
 
 const tsxMods = (import.meta as any).glob('./icons/*.tsx', { eager: true });
 const vueMods = (import.meta as any).glob('./icons/*.vue', { eager: true });
