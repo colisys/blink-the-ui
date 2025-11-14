@@ -2,3 +2,17 @@
 
 @dropdown-class-name: ~'blink-overlays-dropdown';
 
+.@{dropdown-class-name}-wrapper {
+  position: relative;
+  display: inline-block;
+
+  .@{dropdown-class-name}-inner {
+    background-color: var(--global-light-color);
+    border-radius: var(--global-border-radius);
+    padding: 8px 14px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+}

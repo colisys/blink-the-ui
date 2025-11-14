@@ -1,12 +1,20 @@
 <template>
-  <div class="blink-quote-wrapper">
+  <div
+    class="blink-quote-wrapper"
+    :class="[`blink-quote--position-${position}`]"
+  >
     <div class="blink-quote">
       <slot name="title">
         <div class="blink-quote-title" v-if="title">
           {{ title }}
         </div>
       </slot>
-      <slot></slot>
+      <div class="blink-quote-content">
+        <slot></slot>
+      </div>
+      <div class="blink-quote-decor">
+        <slot name="decor"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -15,13 +23,15 @@
 @import './index.less';
 
 .@{quote-class-name} {
-  background-color: v-bind(backgroundColor);
+  &-wrapper {
+    box-shadow: v-bind(style);
+  }
 }
 </style>
 
 <script lang="ts">
 import { getColor } from '@blink-the-ui/helper';
-import type { GlobalVisual } from '@blink-the-ui/theme';
+import type { GlobalPosition, GlobalVisual } from '@blink-the-ui/theme';
 import { computed, defineComponent, type PropType } from 'vue';
 
 export default defineComponent({
@@ -33,13 +43,25 @@ export default defineComponent({
     },
     visual: {
       type: String as PropType<GlobalVisual>,
-      default: 'default',
+      default: 'primary',
+    },
+    position: {
+      type: String as PropType<GlobalPosition>,
+      default: 'left',
     },
   },
   setup(props) {
     const title = computed(() => props.title);
-    const backgroundColor = computed(() => getColor(props.visual));
-    return { title, backgroundColor };
+    const visual = computed(() => getColor(props.visual));
+    const position = computed(() => props.position);
+    const style = computed(() => {
+      let x =
+        position.value === 'left' ? 4 : position.value === 'right' ? -4 : 0;
+      let y =
+        position.value === 'top' ? 4 : position.value === 'bottom' ? -4 : 0;
+      return `inset ${x}px ${y}px 0 0 ${visual.value}`;
+    });
+    return { title, visual, position, style };
   },
 });
 </script>

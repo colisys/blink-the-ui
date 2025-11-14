@@ -56,6 +56,7 @@ import {
   reactive,
 } from 'vue';
 import { BlinkAnimFade } from '@blink-the-ui/animations';
+import { getElementRelativePosition } from '@blink-the-ui/helper';
 
 export default defineComponent({
   name: 'BlinkOverlayPopup',
@@ -87,6 +88,9 @@ export default defineComponent({
     const targetRect = ref<DOMRect | null>(null);
     const popupRect = ref<DOMRect | null>(null);
     const margin = ref<number>(__props.margin);
+    const position = ref<string>(__props.position);
+    const alignment = ref<string>(__props.alignment);
+    const content = ref<string>(__props.content);
 
     const popupStyle = reactive({
       top: `${targetRect.value?.top || 0}px`,
@@ -94,52 +98,21 @@ export default defineComponent({
     });
 
     const updatePosition = () => {
-      nextTick(() => {
-        targetRect.value = contentRef.value?.getBoundingClientRect() || null;
-        popupRect.value = popupRef.value?.getBoundingClientRect() || null;
-        calculateAndSetPosition();
-      });
+      setTimeout(() => {
+        const { top, left } = getElementRelativePosition(
+          window,
+          contentRef.value!,
+          popupRef.value!,
+          position.value,
+          margin.value
+        );
+        popupStyle.top = `${top}px`;
+        popupStyle.left = `${left}px`;
+      }, 0);
     };
 
-    const handlePopupShowup = () => {
-      visible.value = true;
-    };
-
-    const handlePopupHidden = () => {
-      visible.value = false;
-    };
-
-    const calculateAndSetPosition = () => {
-      if (!targetRect.value || !popupRect.value) return;
-
-      let top = 0;
-      let left = 0;
-
-      const target = targetRect.value;
-      const popup = popupRect.value;
-
-      switch (__props.position) {
-        case 'top':
-          top = target.top - popup.height - margin.value;
-          left = target.left + target.width / 2 - popup.width / 2;
-          break;
-        case 'bottom':
-          top = target.bottom + margin.value;
-          left = target.left + target.width / 2 - popup.width / 2;
-          break;
-        case 'left':
-          top = target.top + target.height / 2 - popup.height / 2;
-          left = target.left - popup.width - margin.value;
-          break;
-        case 'right':
-          top = target.top + target.height / 2 - popup.height / 2;
-          left = target.right + margin.value;
-          break;
-      }
-
-      popupStyle.top = `${top}px`;
-      popupStyle.left = `${left}px`;
-    };
+    const handlePopupShowup = () => (visible.value = true);
+    const handlePopupHidden = () => (visible.value = false);
 
     onMounted(() => {
       updatePosition();
@@ -149,20 +122,20 @@ export default defineComponent({
 
     watch(
       () => __props.position,
-      () => visible.value && updatePosition()
+      newVal => (position.value = newVal) && visible.value && updatePosition()
     );
 
     watch(
       () => __props.margin,
-      () => visible.value && updatePosition()
+      newVal => (margin.value = newVal) && visible.value && updatePosition()
     );
     watch(
       () => __props.alignment,
-      () => visible.value && updatePosition()
+      newVal => (alignment.value = newVal) && visible.value && updatePosition()
     );
     watch(
       () => __props.content,
-      () => visible.value && updatePosition()
+      newVal => (content.value = newVal) && visible.value && updatePosition()
     );
 
     expose({

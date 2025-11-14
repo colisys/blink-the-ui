@@ -11,6 +11,7 @@ import {
   BlinkForm,
   BlinkUpload,
   GlobalVisual,
+  BlinkQuote,
 } from '@blink-the-ui/components';
 
 import {
@@ -32,6 +33,8 @@ import {
   BlinkOverlayDialog,
   BlinkOverlayDock,
   BlinkOverlayPopup,
+  BlinkOverlayToast,
+  BlinkOverlayDropdown,
   createOverlay,
 } from '@blink-the-ui/overlays';
 
@@ -289,7 +292,8 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
       ></BlinkProgress>
 
       <Group justify="center" fill>
-        <BlinkCheckbox></BlinkCheckbox>
+        <BlinkCheckbox :indeterminate="true"></BlinkCheckbox>
+        <BlinkCheckbox :checked="true"></BlinkCheckbox>
       </Group>
 
       <Group fill>
@@ -305,6 +309,20 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
           </BlinkOverlayPopup>
         </BlinkLayoutRow>
       </Group>
+
+      <div class="" style="width: 300px">
+        <BlinkQuote visual="success" title="123123">
+          123123
+          <template #decor>
+            <Button size="xs" visual="success" v-blink-ripple>Click Me!</Button>
+          </template>
+        </BlinkQuote>
+      </div>
+
+      <BlinkOverlayDropdown>
+        <Button>123123</Button>
+        <template #dropdown> 《菜单》 </template>
+      </BlinkOverlayDropdown>
     </Group>
 
     <div v-blink-datetime>2025/10/19 00:00:00</div>
@@ -352,6 +370,7 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
       <BlinkInput name="password" password value="123123"></BlinkInput>
       <Button type="submit">Submit</Button>
     </BlinkForm>
+
     <BlinkOverlayDock
       position="right"
       alignment="center"
@@ -368,11 +387,6 @@ const handleUpdateProgress = (controller: BlinkProgressController) => {
 </template>
 
 <style lang="less">
-@import '@blink-the-ui/components/style.css';
-@import '@blink-the-ui/animations/style.css';
-@import '@blink-the-ui/overlays/style.css';
-@import '@blink-the-ui/layout/style.css';
-
 body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

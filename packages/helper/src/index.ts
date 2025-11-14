@@ -55,6 +55,46 @@ export function setApplicationContext(context: AppContext) {
   appContext = context;
 }
 
+export const getElementRelativePosition = (
+  window: Window,
+  targetRef: HTMLElement,
+  popupRef: HTMLElement,
+  position: string,
+  margin: number
+) => {
+  let top = 0;
+  let left = 0;
+
+  if (!targetRef || !popupRef) return { top, left };
+
+  const target = targetRef.getBoundingClientRect();
+  const popup = popupRef.getBoundingClientRect();
+
+  switch (position) {
+    case 'top':
+      top = window.scrollY + target.top - popup.height - margin;
+      left = window.scrollX + target.left + target.width / 2 - popup.width / 2;
+      break;
+    case 'bottom':
+      top = window.scrollY + target.bottom + margin;
+      left = window.scrollX + target.left + target.width / 2 - popup.width / 2;
+      break;
+    case 'left':
+      top = window.scrollY + target.top + target.height / 2 - popup.height / 2;
+      left = window.scrollX + target.left - popup.width - margin;
+      break;
+    case 'right':
+      top = window.scrollY + target.top + target.height / 2 - popup.height / 2;
+      left = window.scrollX + target.right + margin;
+      break;
+  }
+
+  return {
+    top,
+    left,
+  };
+};
+
 export function getI18n(): (key: string, _default?: string) => string {
   let t: ReturnType<typeof useI18n>['t'];
   try {

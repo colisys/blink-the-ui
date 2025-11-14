@@ -9,5 +9,7 @@ type GlobalVisual =
   | 'dark';
 
 type GlobalComponentSize = 'xs' | 'sm' | 'md' | 'lg';
+type GlobalTheme = 'light' | 'dark';
+type GlobalPosition = 'top' | 'right' | 'bottom' | 'left';
 
-export type { GlobalVisual, GlobalComponentSize };
+export type { GlobalVisual, GlobalComponentSize, GlobalTheme, GlobalPosition };

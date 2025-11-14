@@ -1,6 +1,6 @@
 {
   "name": "blink-the-ui",
-  "version": "0.0.1-alpha.20",
+  "version": "0.0.1-alpha.21",
   "description": "A simple vue3 component library",
   "main": "index.js",
   "scripts": {
@@ -41,44 +41,112 @@
       "require": "./index.js"
     },
     "./components": {
-      "types": "./packages/components/dist/index.d.ts",
-      "import": "./packages/components/dist/index.js",
-      "require": "./packages/components/dist/index.umd.cjs"
+      "development": {
+        "types": "./packages/components/src/index.ts",
+        "import": "./packages/components/src/index.ts",
+        "require": "./packages/components/src/index.ts"
+      },
+      "default": {
+        "types": "./packages/components/dist/index.d.ts",
+        "import": "./packages/components/dist/index.js",
+        "require": "./packages/components/dist/index.umd.cjs"
+      }
     },
     "./animations": {
-      "types": "./packages/animations/dist/index.d.ts",
-      "import": "./packages/animations/dist/index.js",
-      "require": "./packages/animations/dist/index.umd.cjs"
+      "development": {
+        "types": "./packages/animations/src/index.ts",
+        "import": "./packages/animations/src/index.ts",
+        "require": "./packages/animations/src/index.ts"
+      },
+      "default": {
+        "types": "./packages/animations/dist/index.d.ts",
+        "import": "./packages/animations/dist/index.js",
+        "require": "./packages/animations/dist/index.umd.cjs"
+      }
     },
     "./layout": {
-      "types": "./packages/layout/dist/index.d.ts",
-      "import": "./packages/layout/dist/index.js",
-      "require": "./packages/layout/dist/index.umd.cjs"
+      "development": {
+        "types": "./packages/layout/src/index.ts",
+        "import": "./packages/layout/src/index.ts",
+        "require": "./packages/layout/src/index.ts"
+      },
+      "default": {
+        "types": "./packages/layout/dist/index.d.ts",
+        "import": "./packages/layout/dist/index.js",
+        "require": "./packages/layout/dist/index.umd.cjs"
+      }
     },
     "./directives": {
-      "types": "./packages/directives/dist/index.d.ts",
-      "import": "./packages/directives/dist/index.js",
-      "require": "./packages/directives/dist/index.umd.cjs"
+      "development": {
+        "types": "./packages/directives/src/index.ts",
+        "import": "./packages/directives/src/index.ts",
+        "require": "./packages/directives/src/index.ts"
+      },
+      "default": {
+        "types": "./packages/directives/dist/index.d.ts",
+        "import": "./packages/directives/dist/index.js",
+        "require": "./packages/directives/dist/index.umd.cjs"
+      }
     },
     "./overlays": {
-      "types": "./packages/overlays/dist/index.d.ts",
-      "import": "./packages/overlays/dist/index.js",
-      "require": "./packages/overlays/dist/index.umd.cjs"
+      "development": {
+        "types": "./packages/overlays/src/index.ts",
+        "import": "./packages/overlays/src/index.ts",
+        "require": "./packages/overlays/src/index.ts"
+      },
+      "default": {
+        "types": "./packages/overlays/dist/index.d.ts",
+        "import": "./packages/overlays/dist/index.js",
+        "require": "./packages/overlays/dist/index.umd.cjs"
+      }
     },
     "./icons": {
-      "types": "./packages/icons/dist/index.d.ts",
-      "import": "./packages/icons/dist/index.js",
-      "require": "./packages/icons/dist/index.umd.cjs"
+      "development": {
+        "types": "./packages/icons/src/index.ts",
+        "import": "./packages/icons/src/index.ts",
+        "require": "./packages/icons/src/index.ts"
+      },
+      "default": {
+        "types": "./packages/icons/dist/index.d.ts",
+        "import": "./packages/icons/dist/index.js",
+        "require": "./packages/icons/dist/index.umd.cjs"
+      }
     },
     "./i18n": {
-      "types": "./packages/i18n/dist/index.d.ts",
-      "import": "./packages/i18n/dist/index.js",
-      "require": "./packages/i18n/dist/index.umd.cjs"
+      "development": {
+        "types": "./packages/i18n/src/index.ts",
+        "import": "./packages/i18n/src/index.ts",
+        "require": "./packages/i18n/src/index.ts"
+      },
+      "default": {
+        "types": "./packages/i18n/dist/index.d.ts",
+        "import": "./packages/i18n/dist/index.js",
+        "require": "./packages/i18n/dist/index.umd.cjs"
+      }
     },
     "./helper": {
-      "types": "./packages/helper/dist/index.d.ts",
-      "import": "./packages/helper/dist/index.js",
-      "require": "./packages/helper/dist/index.umd.cjs"
+      "development": {
+        "types": "./packages/helper/src/index.ts",
+        "import": "./packages/helper/src/index.ts",
+        "require": "./packages/helper/src/index.ts"
+      },
+      "default": {
+        "types": "./packages/helper/dist/index.d.ts",
+        "import": "./packages/helper/dist/index.js",
+        "require": "./packages/helper/dist/index.umd.cjs"
+      }
+    },
+    "./theme": {
+      "development": {
+        "types": "./packages/theme/src/index.ts",
+        "import": "./packages/theme/src/index.ts",
+        "require": "./packages/theme/src/index.ts"
+      },
+      "default": {
+        "types": "./packages/theme/dist/index.d.ts",
+        "import": "./packages/theme/dist/index.js",
+        "require": "./packages/theme/dist/index.umd.cjs"
+      }
     }
   },
   "devDependencies": {

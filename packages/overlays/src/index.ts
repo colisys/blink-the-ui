@@ -4,6 +4,7 @@ import BlinkOverlayDialog from './dialog';
 import BlinkOverlayDock from './dock';
 import BlinkOverlayPopup from './popup';
 import BlinkOverlayToast from './toast';
+import BlinkOverlayDropdown from './dropdown';
 
 import {
   setApplicationContext,
@@ -109,6 +110,7 @@ export {
   BlinkOverlayDock,
   BlinkOverlayPopup,
   BlinkOverlayToast,
+  BlinkOverlayDropdown,
   createOverlay,
 };
 
@@ -120,5 +122,6 @@ export default {
     import('./dock').then(m => app.component(m.default.name!, m.default));
     import('./popup').then(m => app.component(m.default.name!, m.default));
     import('./toast').then(m => app.component(m.default.name!, m.default));
+    import('./dropdown').then(m => app.component(m.default.name!, m.default));
   },
 };

@@ -1,4 +1,4 @@
-import BlinkDropdown from './index.vue';
+import BlinkOverlayDropdown from './index.vue';
 
-export { BlinkDropdown };
-export default BlinkDropdown;
+export { BlinkOverlayDropdown };
+export default BlinkOverlayDropdown;
